@@ -1,0 +1,44 @@
+.navbar{
+  display: flex;
+  justify-content: center;
+  padding: 10 px 0;
+
+}
+
+.navbar ul {
+list-style-type: none;
+padding: 0;
+background-color: rgb(159, 120, 182);
+border-radius: 5px;
+}
+
+.navbar li {
+display: inline;
+margin: 0 20px;
+
+}
+
+.navbar a {
+text-decoration: none;
+color: aliceblue;
+padding: 14px 20px;
+}
+
+.navbar a:hover {
+  background-color: rgb(210, 179, 250);
+}
+
+.nav-links a:hover {
+    text-decoration: underline; /* Sublinha o link ao passar o mouse */
+}
+
+
+.navbar {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra */
+}
+
+/* Borda inferior opcional */
+.navbar {
+    border-bottom: 2px solid #9a61c9; 
+}
+
