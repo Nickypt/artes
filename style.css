@@ -1,79 +1,242 @@
+/* Estilos Gerais */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
-
-header {
-    background-color: #9780d6;
-    color: #b77afd;
-    padding: 10px 20px;
-}
-
-* {
     box-sizing: border-box;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
 }
 
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
+h1, h2, h3 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
 }
 
-.navbar {
+a {
+    text-decoration: none;
+    color: #007bff;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Header e Navegação */
+header {
+    background-color: #fff;
+    color: #333;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #2c3e50;
-    padding: 15px 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.logo {
-    font-size: 24px;
-    color: #ecf0f1;
+.logo a {
+    font-size: 1.8em;
     font-weight: bold;
+    color: #007bff;
 }
 
-.navbar ul {
-    list-style-type: none;
+nav ul {
+    list-style: none;
+    margin: 0;
     padding: 0;
+    display: flex;
 }
 
-.navbar ul li {
-    display: inline;
+nav ul li {
+    margin-left: 30px;
 }
 
-.navbar ul li a {
-    text-decoration: none;
-    color: #ecf0f1;
-    padding: 10px 20px;
-    transition: background-color 0.3s, color 0.3s;
+nav ul li a {
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-.navbar ul li a:hover {
-    background-color: #3498db;
-    color: white;
+nav ul li a:hover {
+    color: #007bff;
 }
 
-section {
-    padding: 50px 20px;
-}
-
-h1 {
-    font-size: 36px;
-}
-
-p {
-    font-size: 18px;
-}
-
-section {
-    padding: 20px;
-}
-
-footer {
-    background-color: #a176be;
-    color: rgb(135, 98, 182);
+/* Seção Hero */
+.hero {
+    background: url('https://via.placeholder.com/1500x500?text=Sua+Arte+Aqui') no-repeat center center/cover;
+    color: #fff;
     text-align: center;
-    padding: 10px 0;
+    padding: 100px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px;
+}
+
+.hero-content {
+    background-color: rgba(0,0,0,0.5);
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.hero-content h1 {
+    color: #fff;
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* Seção da Galeria */
+.gallery-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: #fff;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.gallery-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery-item h3 {
+    font-size: 1.2em;
+    margin: 15px 10px 5px;
+    text-align: left;
+}
+
+.gallery-item p {
+    font-size: 0.9em;
+    color: #666;
+    margin: 0 10px 15px;
+    text-align: left;
+}
+
+/* Seções Sobre e Contato */
+.about-section, .contact-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.about-section p {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+.contact-form button {
+    cursor: pointer;
+    border: none;
+    font-size: 1.1em;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 10px 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+    }
 }

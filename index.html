@@ -3,83 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portal das artes</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Minha Galeria de Arte</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>𝓅𝑜𝓇𝓉𝒶𝓁 𝒹𝒶𝓈 𝒶𝓇𝓉𝑒𝓈 </h1>
-
-            <nav class="navbar">
-        <div class="logo">MeuSite</div>
+        <nav>
+            <div class="logo">
+                <a href="#">Minha Arte</a>
+            </div>
             <ul>
                 <li><a href="#home">Início</a></li>
-                <li><a href="#sobre">Sobre Nós</a></li>
-                <li><a href="#tipos">Tipos de Arte</a></li>
                 <li><a href="#galeria">Galeria</a></li>
-                <li><a href="#eventos">Eventos</a></li>
-                <li><a href="#blog">Blog</a></li>
+                <li><a href="#sobre">Sobre</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
         </nav>
     </header>
 
-    <section id="home">
-        <h2>𝒃𝒆𝒎 𝒗𝒊𝒏𝒅𝒐𝒔!</h2>
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Bem-vindo à Minha Galeria</h1>
+                <p>Descubra um mundo de cores, formas e inspiração.</p>
+                <a href="#galeria" class="btn">Explorar Galeria</a>
+            </div>
+        </section>
 
+        <section id="galeria" class="gallery-section">
+            <h2>Nossas Obras</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x200?text=Arte+1" alt="Obra de Arte 1">
+                    <h3>Título da Obra 1</h3>
+                    <p>Óleo sobre tela, 2023</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x200?text=Arte+2" alt="Obra de Arte 2">
+                    <h3>Título da Obra 2</h3>
+                    <p>Aquarela, 2024</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x200?text=Arte+3" alt="Obra de Arte 3">
+                    <h3>Título da Obra 3</h3>
+                    <p>Escultura em metal, 2022</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x200?text=Arte+4" alt="Obra de Arte 4">
+                    <h3>Título da Obra 4</h3>
+                    <p>Fotografia, 2023</p>
+                </div>
+            </div>
+        </section>
 
-        <p>A arte é uma expressão da criatividade humana que reflete emoções, culturas e histórias ao longo do tempo. Através de diversas formas, como pintura, música e literatura, ela provoca sentimentos e nos transporta para novas realidades. Além de encantar, a arte pode ser uma poderosa ferramenta de protesto e mudança social, abordando questões importantes da sociedade.!</p>
-    </section>
+        <section id="sobre" class="about-section">
+            <h2>Sobre Nós</h2>
+            <p>Seja bem-vindo à nossa galeria virtual, um espaço dedicado à celebração da arte em todas as suas formas. Acreditamos que a arte tem o poder de inspirar, provocar e transformar. Aqui, você encontrará uma coleção cuidadosamente selecionada de obras que expressam a diversidade e a riqueza da criatividade humana.</p>
+            <p>Nosso objetivo é conectar amantes da arte a talentosos artistas, proporcionando uma experiência imersiva e enriquecedora. Explore nossas coleções, descubra novas perspectivas e deixe-se levar pela beleza e profundidade de cada peça.</p>
+        </section>
 
-    <section id="sobre">
-        <h2>Sobre Nós</h2>
-        <p>Estamos aqui para promover a arte em todas as suas formas e conectar artistas e apreciadores.</p>
-    </section>
-
-    <section id="tipos">
-        <h2>Tipos de Arte</h2>
-        <ul>
-            <li>Artes Visuais</li>
-            <li>Artes Performáticas</li>
-            <li>Artes Literárias</li>
-            <li>Artes Digitais</li>
-        </ul>
-    </section>
-
-    <section id="galeria">
-        <h2>Galeria</h2>
-        <!-- Aqui você pode adicionar imagens de obras de arte -->
-    </section>
-
-    <section id="eventos">
-        <h2>Eventos</h2>
-        <!-- Lista de eventos futuros -->
-    </section>
-
-    <section id="blog">
-        <h2>Blog</h2>
-        <!-- Artigos sobre arte -->
-    </section>
-
-    <section id="contato">
-        <h2>Contato</h2>
-        <form action="#">
-            <label for="nome">Nome:</label><br>
-            <input type="text" id="nome" name="nome"><br><br>
-
-            <label for="email">Email:</label><br>
-            <input type="email" id="email" name="email"><br><br>
-
-            <label for="mensagem">Mensagem:</label><br>
-            <textarea id="mensagem" name="mensagem"></textarea><br><br>
-
-            <input type="submit" value="Enviar">
-        </form>
-    </section>
+        <section id="contato" class="contact-section">
+            <h2>Entre em Contato</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Seu Nome" required>
+                <input type="email" placeholder="Seu Email" required>
+                <textarea placeholder="Sua Mensagem" rows="5"></textarea>
+                <button type="submit" class="btn">Enviar Mensagem</button>
+            </form>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2025 Portal das artes. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Minha Galeria de Arte. Todos os direitos reservados.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
 </html>
