@@ -240,3 +240,58 @@ footer {
         grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
     }
 }
+
+
+
+/* --- */
+/* Seção de Dicas */
+.tips-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.tip-item {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tip-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.tip-item h3 {
+    color: #007bff;
+    font-size: 1.4em;
+    margin-bottom: 10px;
+    text-align: left; /* Alinha o título da dica à esquerda */
+}
+
+.tip-item p {
+    font-size: 1em;
+    color: #555;
+    text-align: left; /* Alinha o texto da dica à esquerda */
+}
+
+/* Responsividade para a seção de Dicas */
+@media (max-width: 768px) {
+    .tips-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+    }
+}
+
