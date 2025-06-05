@@ -4,7 +4,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #f4f4f4;
+    background-color: #f5d4ff;
     color: #333;
     line-height: 1.6;
 }
@@ -36,7 +36,7 @@ a {
 /* Header e Navegação */
 header {
     background-color: #fff;
-    color: #370252;
+    color: #400060;
     padding: 15px 0;
     box-shadow: 0 2px 5px rgba(45, 0, 55, 0.196);
     position: sticky;
@@ -262,7 +262,7 @@ footer {
 }
 
 .tip-item {
-    background-color: #edabff;
+    background-color: #ddabff;
     border: 1px solid #eee;
     border-radius: 8px;
     padding: 25px;
