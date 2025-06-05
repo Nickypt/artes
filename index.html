@@ -1,42 +1,81 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>portal das artes</title>
+    <title>Arte em Foco</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body bgcolor="Lightpurple">
- 
-    <link rel="stylesheet"
-href="styles.css">
-</header>
-<body>  
-<header>
-<nav class="navbar">
-  <ul>
-    <li><a href="#home">Inicio</a></li>
+<body>
+    <header>
+        <h1>Arte em Foco</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+                <li><a href="#tipos">Tipos de Arte</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#eventos">Eventos</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
 
-<li> <a href="#sobre">Sobre</a></li>
+    <section id="home">
+        <h2>Bem-vindo ao nosso site sobre artes!</h2>
+        <p>A arte é uma expressão fundamental da nossa humanidade. Explore diferentes formas e estilos!</p>
+    </section>
 
-<li><a  
-href="#contato">Contato</a></li>
+    <section id="sobre">
+        <h2>Sobre Nós</h2>
+        <p>Estamos aqui para promover a arte em todas as suas formas e conectar artistas e apreciadores.</p>
+    </section>
 
-  </ul>
-</nav>
-</header>
-    
-<main>
-<section class="Inicio"
+    <section id="tipos">
+        <h2>Tipos de Arte</h2>
+        <ul>
+            <li>Artes Visuais</li>
+            <li>Artes Performáticas</li>
+            <li>Artes Literárias</li>
+            <li>Artes Digitais</li>
+        </ul>
+    </section>
 
-<h1> 𝓹𝓸𝓻𝓽𝓪𝓵 𝓭𝓪𝓼 𝓪𝓻𝓽𝓮𝓼 ˗ˏˋ 🖌 ˎˊ˗ </h1>
+    <section id="galeria">
+        <h2>Galeria</h2>
+        <!-- Aqui você pode adicionar imagens de obras de arte -->
+    </section>
 
+    <section id="eventos">
+        <h2>Eventos</h2>
+        <!-- Lista de eventos futuros -->
+    </section>
 
+    <section id="blog">
+        <h2>Blog</h2>
+        <!-- Artigos sobre arte -->
+    </section>
 
+    <section id="contato">
+        <h2>Contato</h2>
+        <form action="#">
+            <label for="nome">Nome:</label><br>
+            <input type="text" id="nome" name="nome"><br><br>
 
-</main>
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br><br>
 
+            <label for="mensagem">Mensagem:</label><br>
+            <textarea id="mensagem" name="mensagem"></textarea><br><br>
 
+            <input type="submit" value="Enviar">
+        </form>
+    </section>
 
+    <footer>
+        <p>&copy; 2025 Arte em Foco. Todos os direitos reservados.</p>
+    </footer>
 
 </body>
 </html>
