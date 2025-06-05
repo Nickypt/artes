@@ -276,7 +276,7 @@ footer {
 }
 
 .tip-item h3 {
-    color: #007bff;
+    color: #9500ff;
     font-size: 1.4em;
     margin-bottom: 10px;
     text-align: left; /* Alinha o título da dica à esquerda */
@@ -284,7 +284,7 @@ footer {
 
 .tip-item p {
     font-size: 1em;
-    color: #555;
+    color: #3a003a3d;
     text-align: left; /* Alinha o texto da dica à esquerda */
 }
 
