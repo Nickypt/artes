@@ -4,13 +4,15 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: #f4f4f4;
+    color: #37013d;
     background-color: #f5d4ff;
     color: #333;
     line-height: 1.6;
 }
 
 h1, h2, h3 {
-    color: #333;
+    color: #2c0031;
     text-align: center;
     margin-bottom: 20px;
 }
@@ -154,7 +156,7 @@ nav ul li a:hover {
 
 .gallery-item p {
     font-size: 0.9em;
-    color: #666;
+    color: #b992d6;
     margin: 0 10px 15px;
     text-align: left;
 }
@@ -262,7 +264,7 @@ footer {
 }
 
 .tip-item {
-    background-color: #ddabff;
+    background-color: #ead4f8;
     border: 1px solid #eee;
     border-radius: 8px;
     padding: 25px;
@@ -276,7 +278,7 @@ footer {
 }
 
 .tip-item h3 {
-    color: #9500ff;
+    color: #ce95f7;
     font-size: 1.4em;
     margin-bottom: 10px;
     text-align: left; /* Alinha o título da dica à esquerda */
@@ -295,3 +297,94 @@ footer {
     }
 }
 
+
+/* --- */
+/* Seção de Artistas */
+.artists-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center; /* Centraliza o título e descrição */
+}
+
+.artists-section .section-description {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.artists-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.artist-item {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artist-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.artist-item img {
+    width: 150px; /* Tamanho fixo para as imagens dos artistas */
+    height: 150px;
+    border-radius: 50%; /* Torna as imagens circulares */
+    object-fit: cover; /* Garante que a imagem preencha o círculo */
+    margin-bottom: 15px;
+    border: 3px solid #007bff; /* Borda colorida para destaque */
+}
+
+.artist-item h3 {
+    color: #333;
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.artist-item p {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 20px;
+    min-height: 80px; /* Para manter o tamanho do card mais consistente */
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Limita o texto a 4 linhas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.artist-item .artist-link {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.artist-item .artist-link:hover {
+    background-color: #0056b3;
+}
+
+/* Responsividade para a seção de Artistas */
+@media (max-width: 768px) {
+    .artists-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+    }
+}
