@@ -392,3 +392,124 @@ footer {
 
 
 
+/* Estilos Gerais */
+body {
+    font-family: 'Lora', serif; /* Fonte principal para o corpo do texto */
+    line-height: 1.7;
+    color: #333;
+    margin: 0;
+    background-color: #f8f8f8; /* Fundo suave para a página */
+}
+
+.container {
+    max-width: 900px; /* Largura máxima do conteúdo */
+    margin: 40px auto; /* Centraliza o conteúdo com margem superior e inferior */
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif; /* Fonte para títulos e subtítulos */
+    color: #5a4b41; /* Cor para os títulos */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 3em;
+    margin-top: 60px;
+    border-bottom: 2px solid #c0b2a5; /* Linha de destaque */
+    padding-bottom: 15px;
+}
+
+h2 {
+    font-size: 2.2em;
+    margin-top: 50px;
+    color: #7b6d63;
+}
+
+h3 {
+    font-size: 1.8em;
+    color: #8c7e73;
+    margin-bottom: 15px;
+}
+
+/* Seções de Arte */
+.art-section {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    margin-bottom: 50px;
+    transition: transform 0.3s ease-in-out; /* Efeito de transição */
+}
+
+.art-section:hover {
+    transform: translateY(-5px); /* Eleva a seção ao passar o mouse */
+}
+
+.art-section p {
+    margin-bottom: 1em;
+    text-align: justify;
+}
+
+.art-section ul {
+    list-style: none; /* Remove marcadores de lista padrão */
+    padding: 0;
+    margin-left: 20px;
+}
+
+.art-section ul li {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 25px; /* Espaço para o ícone customizado */
+}
+
+.art-section ul li::before {
+    content: '🎨'; /* Ícone de paleta de artista */
+    position: absolute;
+    left: 0;
+    color: #c0b2a5;
+    font-size: 1.2em;
+    top: 0;
+}
+
+strong {
+    color: #5a4b41;
+}
+
+/* Linha divisória */
+hr {
+    border: none;
+    border-top: 1px dashed #c0b2a5; /* Linha tracejada suave */
+    margin: 60px 0;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+    font-size: 0.9em;
+    background-color: #eee;
+    margin-top: 60px;
+}
+
+/* Responsividade básica */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+    h1 {
+        font-size: 2.5em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    h3 {
+        font-size: 1.5em;
+    }
+    .art-section {
+        padding: 25px;
+    }
+}
