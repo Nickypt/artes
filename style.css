@@ -347,7 +347,7 @@ footer {
     border-radius: 50%; /* Torna as imagens circulares */
     object-fit: cover; /* Garante que a imagem preencha o círculo */
     margin-bottom: 15px;
-    border: 3px solid #007bff; /* Borda colorida para destaque */
+    border: 3px solid #e7b8f8; /* Borda colorida para destaque */
 }
 
 .artist-item h3 {
@@ -370,7 +370,7 @@ footer {
 
 .artist-item .artist-link {
     display: inline-block;
-    background-color: #007bff;
+    background-color: #aa63d3;
     color: #fff;
     padding: 8px 15px;
     border-radius: 5px;
@@ -379,7 +379,7 @@ footer {
 }
 
 .artist-item .artist-link:hover {
-    background-color: #0056b3;
+    background-color: #9800b3;
 }
 
 /* Responsividade para a seção de Artistas */
