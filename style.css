@@ -7,7 +7,7 @@ body {
     background-color: #f4f4f4;
     color: #37013d;
     background-color: #f5d4ff;
-    color: #333;
+    color: #2d0137;
     line-height: 1.6;
 }
 
@@ -133,7 +133,7 @@ nav ul li a:hover {
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 8px rgba(59, 0, 73, 0.1);
     transition: transform 0.3s ease;
 }
 
