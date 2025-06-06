@@ -37,54 +37,90 @@
 <main>
 
   <!-- Seção de Galeria -->
-    <section id="galeria" class="py-20 bg-gray-50 px-4 md:px-10">
-        <div class="container mx-auto max-w-6xl">
-            <h2 class="text-5xl font-extrabold text-center mb-16 text-gray-900 leading-tight">
-                Nossa Galeria de Arte
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <!-- Cartão de Arte 1 -->
-                <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 ease-in-out transform hover:-translate-y-2 overflow-hidden border border-gray-200">
-                    <img src="https://placehold.co/600x400/9333ea/ffffff?text=Pintura+Abstrata+Moderna" alt="Pintura Abstrata Moderna" class="w-full h-72 object-cover rounded-t-2xl">
-                    <div class="p-8">
-                        <h3 class="text-3xl font-bold mb-3 text-purple-800">A Essência Abstrata</h3>
-                        <p class="text-gray-700 leading-relaxed text-lg mb-6">
-                            Uma obra hipnotizante que desafia a percepção com suas cores vibrantes e formas fluidas, convidando à introspecção.
-                        </p>
-                        <button class="w-full bg-gradient-to-r from-purple-700 to-indigo-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-purple-300">
+<section id="galeria" class="py-28 bg-gradient-to-br from-indigo-50 to-purple-50 px-4 md:px-10 overflow-hidden">
+    <div class="container mx-auto max-w-7xl">
+        <h2 class="text-6xl md:text-7xl font-extrabold text-center mb-20 text-gray-900 leading-tight tracking-tighter drop-shadow-lg
+                   bg-clip-text text-transparent bg-gradient-to-r from-purple-700 to-indigo-600 animate-fade-in-down">
+            Descubra Nossas Obras de Arte
+        </h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 xl:gap-16">
+            <!-- Cartão de Arte 1 -->
+            <div class="relative bg-white rounded-3xl shadow-2xl hover:shadow-purple-500/60
+                        transform transition-all duration-700 ease-in-out hover:scale-105 hover:-translate-y-3
+                        overflow-hidden border border-gray-100 ring-2 ring-transparent hover:ring-purple-400/80 group">
+                <img src="https://placehold.co/600x400/9333ea/ffffff?text=Pintura+Abstrata+Fluida" alt="Pintura Abstrata Fluida"
+                     class="w-full h-80 object-cover rounded-t-3xl transition-transform duration-700 group-hover:scale-115 group-hover:brightness-105">
+                <div class="p-10 text-center relative z-10 bg-white">
+                    <h3 class="text-4xl font-bold mb-4 text-purple-800 leading-snug">A Essência Abstrata</h3>
+                    <p class="text-gray-700 leading-relaxed text-xl mb-8">
+                        Uma obra hipnotizante que desafia a percepção com suas cores vibrantes e formas fluidas, convidando à introspecção profunda.
+                    </p>
+                    <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-lg font-medium text-gray-900 rounded-full
+                                   group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-700 group-hover:to-indigo-600
+                                   hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800
+                                   transform active:scale-95 transition-all duration-300 ease-in-out">
+                        <span class="relative px-8 py-3 transition-all ease-in duration-300
+                                     bg-white dark:bg-gray-900 rounded-full group-hover:bg-opacity-0">
                             Ver Detalhes
-                        </button>
-                    </div>
+                        </span>
+                    </button>
                 </div>
-                <!-- Cartão de Arte 2 -->
-                <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 ease-in-out transform hover:-translate-y-2 overflow-hidden border border-gray-200">
-                    <img src="https://placehold.co/600x400/3b82f6/ffffff?text=Escultura+Contemporanea" alt="Escultura Contemporânea" class="w-full h-72 object-cover rounded-t-2xl">
-                    <div class="p-8">
-                        <h3 class="text-3xl font-bold mb-3 text-purple-800">Harmonia em Três Dimensões</h3>
-                        <p class="text-gray-700 leading-relaxed text-lg mb-6">
-                            Uma escultura que combina a robustez do metal com a leveza do design, criando uma experiência visual única e marcante.
-                        </p>
-                        <button class="w-full bg-gradient-to-r from-purple-700 to-indigo-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-purple-300">
+            </div>
+
+            <!-- Cartão de Arte 2 -->
+            <div class="relative bg-white rounded-3xl shadow-2xl hover:shadow-blue-500/60
+                        transform transition-all duration-700 ease-in-out hover:scale-105 hover:-translate-y-3
+                        overflow-hidden border border-gray-100 ring-2 ring-transparent hover:ring-blue-400/80 group">
+                <img src="https://placehold.co/600x400/3b82f6/ffffff?text=Escultura+Geometrica+Moderna" alt="Escultura Geométrica Moderna"
+                     class="w-full h-80 object-cover rounded-t-3xl transition-transform duration-700 group-hover:scale-115 group-hover:brightness-105">
+                <div class="p-10 text-center relative z-10 bg-white">
+                    <h3 class="text-4xl font-bold mb-4 text-purple-800 leading-snug">Harmonia em Três Dimensões</h3>
+                    <p class="text-gray-700 leading-relaxed text-xl mb-8">
+                        Uma escultura contemporânea que combina a robustez do metal com a leveza do design, criando uma experiência visual única.
+                    </p>
+                    <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-lg font-medium text-gray-900 rounded-full
+                                   group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-700 group-hover:to-indigo-600
+                                   hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800
+                                   transform active:scale-95 transition-all duration-300 ease-in-out">
+                        <span class="relative px-8 py-3 transition-all ease-in duration-300
+                                     bg-white dark:bg-gray-900 rounded-full group-hover:bg-opacity-0">
                             Ver Detalhes
-                        </button>
-                    </div>
+                        </span>
+                    </button>
                 </div>
-                <!-- Cartão de Arte 3 -->
-                <div class="bg-white rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 ease-in-out transform hover:-translate-y-2 overflow-hidden border border-gray-200">
-                    <img src="https://placehold.co/600x400/06b6d4/ffffff?text=Visoes+Digitais+Futuristas" alt="Visões Digitais Futuristas" class="w-full h-72 object-cover rounded-t-2xl">
-                    <div class="p-8">
-                        <h3 class="text-3xl font-bold mb-3 text-purple-800">Visões Digitais Futuristas</h3>
-                        <p class="text-gray-700 leading-relaxed text-lg mb-6">
-                            A tecnologia encontra a criatividade nesta peça de arte digital, explorando novos horizontes de expressão e imaginação.
-                        </p>
-                        <button class="w-full bg-gradient-to-r from-purple-700 to-indigo-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 ease-in-out focus:outline-none focus:ring-4 focus:ring-purple-300">
+            </div>
+
+            <!-- Cartão de Arte 3 -->
+            <div class="relative bg-white rounded-3xl shadow-2xl hover:shadow-cyan-500/60
+                        transform transition-all duration-700 ease-in-out hover:scale-105 hover:-translate-y-3
+                        overflow-hidden border border-gray-100 ring-2 ring-transparent hover:ring-cyan-400/80 group">
+                <img src="https://placehold.co/600x400/06b6d4/ffffff?text=Paisagem+Digital+Etérea" alt="Paisagem Digital Etérea"
+                     class="w-full h-80 object-cover rounded-t-3xl transition-transform duration-700 group-hover:scale-115 group-hover:brightness-105">
+                <div class="p-10 text-center relative z-10 bg-white">
+                    <h3 class="text-4xl font-bold mb-4 text-purple-800 leading-snug">Visões Digitais Futuristas</h3>
+                    <p class="text-gray-700 leading-relaxed text-xl mb-8">
+                        A tecnologia encontra a criatividade nesta peça de arte digital, explorando novos horizontes de expressão e imaginação.
+                    </p>
+                    <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-lg font-medium text-gray-900 rounded-full
+                                   group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-700 group-hover:to-indigo-600
+                                   hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800
+                                   transform active:scale-95 transition-all duration-300 ease-in-out">
+                        <span class="relative px-8 py-3 transition-all ease-in duration-300
+                                     bg-white dark:bg-gray-900 rounded-full group-hover:bg-opacity-0">
                             Ver Detalhes
-                        </button>
-                    </div>
+                        </span>
+                    </button>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+
+
+
+
+
 
     <!-- Seção: O Que É Arte? -->
     <section id="o-que-e-arte" class="py-20 bg-gradient-to-br from-indigo-50 to-purple-50 px-4 md:px-10 rounded-xl shadow-inner mx-auto my-12 max-w-7xl">
