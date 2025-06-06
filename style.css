@@ -392,12 +392,4 @@ footer {
 
 
 
-#o-que-e-arte ul {
-    list-style: disc; /* ou circle, square */
-    margin-left: 20px;
-    padding-left: 0;
-}
-
-#o-que-e-arte ul li {
-    margin-bottom: 5px;
 }
