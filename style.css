@@ -1,3 +1,159 @@
+/* --- */
+/* Decorações Artísticas */
+
+/* Fundo sutil para a página */
+body {
+    background-color: #f8d0ff; /* Cor de fundo mais clara */
+    /* Adiciona uma textura sutil (opcional) */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="1" fill="%23e0e0e0"/></svg>');
+    background-repeat: repeat;
+    background-size: 20px 20px;
+}
+
+/* Bordas decorativas para seções principais */
+section {
+    position: relative; /* Necessário para posicionar os pseudo-elementos */
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: #f2d9f8;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(77, 0, 86, 0.1);
+    overflow: hidden; /* Garante que decorações internas não vazem */
+}
+
+/* Cantos decorativos para as seções */
+section::before,
+section::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 3px solid #c086d4; /* Cor da "moldura" */
+    border-radius: 5px;
+    opacity: 0.3; /* Transparência para ser sutil */
+}
+
+section::before {
+    top: 20px;
+    left: 20px;
+    border-bottom: none;
+    border-right: none;
+}
+
+section::after {
+    bottom: 20px;
+    right: 20px;
+    border-top: none;
+    border-left: none;
+}
+
+/* Linha decorativa abaixo dos títulos das seções */
+h2 {
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 40px; /* Aumenta espaço para a linha */
+}
+
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px; /* Comprimento da linha */
+    height: 3px;
+    background-color: #bb00ff; /* Cor da linha */
+    border-radius: 5px;
+}
+
+/* Ornamentos para os itens da galeria */
+.gallery-item {
+    position: relative;
+    border: 1px solid #d5c2da;
+    box-shadow: 0 4px 8px rgba(89, 1, 100, 0.1);
+    overflow: hidden;
+}
+
+/* Simula uma "moldura interna" com bordas mais grossas */
+.gallery-item img {
+    border: 5px solid #fff; /* Borda interna branca para a imagem */
+    box-shadow: 0 0 5px rgba(0,0,0,0.1); /* Sombra suave para a moldura interna */
+}
+
+/* Pequeno selo ou pincelada no canto do item da galeria */
+.gallery-item::after {
+    content: '\2726'; /* Um ícone de estrela Unicode, simula um selo */
+    font-size: 1.5em;
+    color: #007bff;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    opacity: 0.7;
+    transform: rotate(15deg); /* Leve rotação */
+}
+
+/* Decoração nos itens dos artistas */
+.artist-item {
+    position: relative;
+}
+
+/* Uma pequena "mancha de tinta" ou "pincelada" de fundo */
+.artist-item::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(0, 123, 255, 0.1); /* Cor azul suave */
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(10px); /* Efeito borrado */
+}
+
+.artist-item::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    right: -10px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 193, 7, 0.1); /* Cor amarela suave */
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(8px);
+}
+
+/* Decoração para o botão principal (Explore Galeria) */
+.btn {
+    border: 2px solid transparent; /* Adiciona uma borda transparente para transição */
+    position: relative;
+    overflow: hidden; /* Para o efeito de brilho */
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: all 0.6s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+
+
+
+
+
+
+
 /* Estilos Gerais */
 body {
     font-family: Arial, sans-serif;
@@ -130,10 +286,10 @@ nav ul li a:hover {
 
 .gallery-item {
     background-color: #fff;
-    border: 1px solid #ddd;
+    border: 1px solid #e9adf0;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(59, 0, 73, 0.1);
+    box-shadow: 0 4px 8px rgba(106, 0, 132, 0.1);
     transition: transform 0.3s ease;
 }
 
@@ -312,7 +468,7 @@ footer {
 
 .artists-section .section-description {
     font-size: 1.1em;
-    color: #666;
+    color: #613864;
     margin-bottom: 40px;
     max-width: 800px;
     margin-left: auto;
@@ -358,7 +514,7 @@ footer {
 
 .artist-item p {
     font-size: 0.95em;
-    color: #555;
+    color: #5e3861;
     margin-bottom: 20px;
     min-height: 80px; /* Para manter o tamanho do card mais consistente */
     display: -webkit-box;
@@ -409,7 +565,7 @@ body {
 
 h1, h2, h3 {
     font-family: 'Playfair Display', serif; /* Fonte para títulos e subtítulos */
-    color: #5a4b41; /* Cor para os títulos */
+    color: #901d98; /* Cor para os títulos */
     text-align: center;
     margin-bottom: 30px;
 }
@@ -424,12 +580,12 @@ h1 {
 h2 {
     font-size: 2.2em;
     margin-top: 50px;
-    color: #7b6d63;
+    color: #530e57;
 }
 
 h3 {
     font-size: 1.8em;
-    color: #8c7e73;
+    color: #9d03a954;
     margin-bottom: 15px;
 }
 
@@ -438,7 +594,7 @@ h3 {
     background-color: #f8e4ff;
     padding: 40px;
     border-radius: 8px; /* Cantos arredondados */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
+    box-shadow: 0 4px 15px rgba(247, 239, 239, 0.08); /* Sombra suave */
     margin-bottom: 50px;
     transition: transform 0.3s ease-in-out; /* Efeito de transição */
 }
