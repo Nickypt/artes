@@ -513,3 +513,81 @@ footer {
         padding: 25px;
     }
 }
+
+
+/* --- */
+/* Seção de Outras Expressões Artísticas */
+.other-expressions-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.other-expressions-section .section-description {
+    font-size: 1.1em;
+    color: #666;
+    margin-bottom: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.expressions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.expression-item {
+    background-color: #f9f9f9;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding-bottom: 20px; /* Ajuste para o conteúdo */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    text-align: center;
+    overflow: hidden; /* Garante que a imagem não vaze */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.expression-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+}
+
+.expression-item img {
+    width: 100%;
+    height: 180px; /* Altura fixa para as imagens */
+    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+    display: block; /* Remove espaço extra abaixo da imagem */
+    margin-bottom: 15px;
+}
+
+.expression-item h3 {
+    color: #007bff;
+    font-size: 1.4em;
+    margin: 0 15px 10px; /* Margem interna para o título */
+}
+
+.expression-item p {
+    font-size: 0.95em;
+    color: #555;
+    padding: 0 15px; /* Padding interno para o parágrafo */
+    min-height: 80px; /* Para manter o tamanho do card mais consistente */
+    display: -webkit-box;
+    -webkit-line-clamp: 4; /* Limita o texto a 4 linhas */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Responsividade para a seção de Outras Expressões */
+@media (max-width: 768px) {
+    .expressions-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+    }
+}
