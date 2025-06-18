@@ -253,7 +253,7 @@ footer {
     margin: 30px auto;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(40, 1, 58, 0.1);
+    box-shadow: 0 0 10px rgba(64, 2, 92, 0.1);
 }
 
 .tips-grid {
@@ -278,7 +278,7 @@ footer {
 }
 
 .tip-item h3 {
-    color: #ce95f7;
+    color: #6d418d;
     font-size: 1.4em;
     margin-bottom: 10px;
     text-align: left; /* Alinha o título da dica à esquerda */
@@ -396,7 +396,7 @@ footer {
 body {
     font-family: 'Lora', serif; /* Fonte principal para o corpo do texto */
     line-height: 1.7;
-    color: #333;
+    color: #644269;
     margin: 0;
     background-color: #f8f8f8; /* Fundo suave para a página */
 }
@@ -435,7 +435,7 @@ h3 {
 
 /* Seções de Arte */
 .art-section {
-    background-color: #fff;
+    background-color: #f8e4ff;
     padding: 40px;
     border-radius: 8px; /* Cantos arredondados */
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08); /* Sombra suave */
@@ -480,7 +480,7 @@ strong {
 /* Linha divisória */
 hr {
     border: none;
-    border-top: 1px dashed #c0b2a5; /* Linha tracejada suave */
+    border-top: 1px dashed #dcb5f5; /* Linha tracejada suave */
     margin: 60px 0;
 }
 
@@ -488,7 +488,7 @@ hr {
 footer {
     text-align: center;
     padding: 30px;
-    color: #777;
+    color: #a167b3;
     font-size: 0.9em;
     background-color: #eee;
     margin-top: 60px;
@@ -521,15 +521,15 @@ footer {
     padding: 60px 20px;
     max-width: 1200px;
     margin: 30px auto;
-    background-color: #fff;
+    background-color: #f4c6ff;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(55, 1, 82, 0.1);
     text-align: center;
 }
 
 .other-expressions-section .section-description {
     font-size: 1.1em;
-    color: #666;
+    color: #c891d6;
     margin-bottom: 40px;
     max-width: 800px;
     margin-left: auto;
@@ -544,11 +544,11 @@ footer {
 }
 
 .expression-item {
-    background-color: #f9f9f9;
-    border: 1px solid #eee;
+    background-color: #ffffff;
+    border: 1px solid #dcc5e3;
     border-radius: 8px;
     padding-bottom: 20px; /* Ajuste para o conteúdo */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 5px rgba(70, 1, 75, 0.05);
     text-align: center;
     overflow: hidden; /* Garante que a imagem não vaze */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -556,7 +556,7 @@ footer {
 
 .expression-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 6px 12px rgba(83, 1, 91, 0.1);
 }
 
 .expression-item img {
@@ -568,14 +568,14 @@ footer {
 }
 
 .expression-item h3 {
-    color: #007bff;
+    color: #400149;
     font-size: 1.4em;
     margin: 0 15px 10px; /* Margem interna para o título */
 }
 
 .expression-item p {
     font-size: 0.95em;
-    color: #555;
+    color: #dbb0f1;
     padding: 0 15px; /* Padding interno para o parágrafo */
     min-height: 80px; /* Para manter o tamanho do card mais consistente */
     display: -webkit-box;
