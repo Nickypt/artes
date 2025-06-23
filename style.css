@@ -3,7 +3,7 @@
 
 /* Fundo sutil para a página */
 body {
-    background-color: #f8d0ff; /* Cor de fundo mais clara */
+    background-color: #f0b3fb; /* Cor de fundo mais clara */
     /* Adiciona uma textura sutil (opcional) */
     background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="1" fill="%23e0e0e0"/></svg>');
     background-repeat: repeat;
@@ -16,7 +16,7 @@ section {
     padding: 60px 20px;
     max-width: 1200px;
     margin: 30px auto;
-    background-color: #f2d9f8;
+    background-color: #eccaf4;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(77, 0, 86, 0.1);
     overflow: hidden; /* Garante que decorações internas não vazem */
@@ -78,14 +78,14 @@ h2::after {
 /* Simula uma "moldura interna" com bordas mais grossas */
 .gallery-item img {
     border: 5px solid #fff; /* Borda interna branca para a imagem */
-    box-shadow: 0 0 5px rgba(0,0,0,0.1); /* Sombra suave para a moldura interna */
+    box-shadow: 0 0 5px rgba(200, 0, 255, 0.1); /* Sombra suave para a moldura interna */
 }
 
 /* Pequeno selo ou pincelada no canto do item da galeria */
 .gallery-item::after {
     content: '\2726'; /* Um ícone de estrela Unicode, simula um selo */
     font-size: 1.5em;
-    color: #007bff;
+    color: #9500ff;
     position: absolute;
     bottom: 10px;
     right: 10px;
@@ -106,7 +106,7 @@ h2::after {
     left: -10px;
     width: 40px;
     height: 40px;
-    background-color: rgba(0, 123, 255, 0.1); /* Cor azul suave */
+    background-color: rgba(234, 0, 255, 0.205); /* Cor azul suave */
     border-radius: 50%;
     z-index: -1;
     filter: blur(10px); /* Efeito borrado */
@@ -119,7 +119,7 @@ h2::after {
     right: -10px;
     width: 30px;
     height: 30px;
-    background-color: rgba(255, 193, 7, 0.1); /* Cor amarela suave */
+    background-color: rgba(255, 7, 238, 0.1); /* Cor amarela suave */
     border-radius: 50%;
     z-index: -1;
     filter: blur(8px);
@@ -324,7 +324,7 @@ nav ul li a:hover {
     margin: 30px auto;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 0 10px rgba(83, 4, 109, 0.1);
 }
 
 .about-section p {
@@ -573,7 +573,7 @@ h1, h2, h3 {
 h1 {
     font-size: 3em;
     margin-top: 60px;
-    border-bottom: 2px solid #c0b2a5; /* Linha de destaque */
+    border-bottom: 2px solid #d095dd; /* Linha de destaque */
     padding-bottom: 15px;
 }
 
@@ -591,7 +591,7 @@ h3 {
 
 /* Seções de Arte */
 .art-section {
-    background-color: #f8e4ff;
+    background-color: #edcef9;
     padding: 40px;
     border-radius: 8px; /* Cantos arredondados */
     box-shadow: 0 4px 15px rgba(247, 239, 239, 0.08); /* Sombra suave */
@@ -624,13 +624,13 @@ h3 {
     content: '🎨'; /* Ícone de paleta de artista */
     position: absolute;
     left: 0;
-    color: #c0b2a5;
+    color: #b56db8;
     font-size: 1.2em;
     top: 0;
 }
 
 strong {
-    color: #5a4b41;
+    color: #572e5b;
 }
 
 /* Linha divisória */
