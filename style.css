@@ -1,37 +1,105 @@
-/* --- */
-/* Decorações Artísticas */
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
-/* Fundo sutil para a página */
+/* General Styles and Artistic Decorations */
 body {
-    background-color: #f0b3fb; /* Cor de fundo mais clara */
-    /* Adiciona uma textura sutil (opcional) */
-    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="1" fill="%23e0e0e0"/></svg>');
+    font-family: 'Lora', serif; /* Main font for body text */
+    line-height: 1.7;
+    color: #644269;
+    margin: 0;
+    box-sizing: border-box; /* Ensures padding and borders are included in the element's total width and height */
+    background-color: #f5d4ff; /* Lighter background color */
+    /* Subtle radial gradient for a soft glow effect */
+    background-image: radial-gradient(circle at center, rgba(255, 255, 255, 0.5) 0%, rgba(245, 212, 255, 0.1) 60%, transparent 100%),
+                      url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="1" fill="%23e0e0e0"/></svg>'); /* Subtle dot pattern */
     background-repeat: repeat;
-    background-size: 20px 20px;
+    background-size: cover, 20px 20px; /* Cover for radial, 20px for dots */
+    background-attachment: fixed; /* Keep background fixed when scrolling */
 }
 
-/* Bordas decorativas para seções principais */
+.container {
+    max-width: 900px; /* Maximum content width */
+    margin: 40px auto; /* Center content with top and bottom margins */
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif; /* Font for titles and subtitles */
+    color: #901d98; /* Color for titles */
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 3em;
+    margin-top: 60px;
+    border-bottom: 2px solid #d095dd; /* Highlight line */
+    padding-bottom: 15px;
+}
+
+h2 {
+    font-size: 2.2em;
+    margin-top: 50px;
+    color: #530e57;
+    position: relative;
+    padding-bottom: 10px;
+    margin-bottom: 40px; /* Increased space for the line */
+}
+
+/* Artistic underline for section titles */
+h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) rotate(-2deg); /* Slight rotation for brushstroke effect */
+    width: 100px; /* Slightly wider */
+    height: 5px; /* Thicker */
+    background: linear-gradient(to right, #bb00ff, #ff00ea); /* Gradient brushstroke */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+h3 {
+    font-size: 1.8em;
+    color: #9d03a9; /* Adjusted opacity for direct use */
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: #9535c5;
+}
+
+strong {
+    color: #572e5b;
+}
+
+/* Decorative borders for main sections */
 section {
-    position: relative; /* Necessário para posicionar os pseudo-elementos */
+    position: relative;
     padding: 60px 20px;
     max-width: 1200px;
     margin: 30px auto;
     background-color: #eccaf4;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(77, 0, 86, 0.1);
-    overflow: hidden; /* Garante que decorações internas não vazem */
+    box-shadow: 0 0 15px rgba(77, 0, 86, 0.15); /* Slightly stronger shadow */
+    overflow: hidden;
+    border: 15px solid; /* Placeholder for border-image */
+    /* Wavy border image */
+    border-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="20" viewBox="0 0 200 20"><path fill="none" stroke="%23c086d4" stroke-width="2" d="M0 10 Q 50 0, 100 10 T 200 10"/></svg>') 15 / 15px repeat;
 }
 
-/* Cantos decorativos para as seções */
+/* Decorative corners for sections */
 section::before,
 section::after {
     content: '';
     position: absolute;
     width: 50px;
     height: 50px;
-    border: 3px solid #c086d4; /* Cor da "moldura" */
+    border: 3px solid #c086d4; /* Frame color */
     border-radius: 5px;
-    opacity: 0.3; /* Transparência para ser sutil */
+    opacity: 0.3; /* Subtle transparency */
 }
 
 section::before {
@@ -48,88 +116,124 @@ section::after {
     border-left: none;
 }
 
-/* Linha decorativa abaixo dos títulos das seções */
-h2 {
-    position: relative;
-    padding-bottom: 10px;
-    margin-bottom: 40px; /* Aumenta espaço para a linha */
+/* --- Header and Navigation --- */
+header {
+    background: linear-gradient(to right, #b171f5, #e7b8f8); /* Purple to lighter purple gradient */
+    color: #fff; /* Text color for better contrast */
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(45, 0, 55, 0.25); /* Stronger shadow */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* Subtle diagonal lines texture */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><path fill="%23ffffff" fill-opacity="0.1" d="M0 0 L100 100 M100 0 L0 100"/></svg>');
+    background-size: 100px 100px;
 }
 
-h2::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 80px; /* Comprimento da linha */
-    height: 3px;
-    background-color: #bb00ff; /* Cor da linha */
-    border-radius: 5px;
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-/* Ornamentos para os itens da galeria */
-.gallery-item {
-    position: relative;
-    border: 1px solid #d5c2da;
-    box-shadow: 0 4px 8px rgba(89, 1, 100, 0.1);
-    overflow: hidden;
+.logo a {
+    font-size: 2em; /* Slightly larger logo */
+    font-weight: bold;
+    color: #fff; /* White logo text */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
 }
 
-/* Simula uma "moldura interna" com bordas mais grossas */
-.gallery-item img {
-    border: 5px solid #fff; /* Borda interna branca para a imagem */
-    box-shadow: 0 0 5px rgba(200, 0, 255, 0.1); /* Sombra suave para a moldura interna */
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
 }
 
-/* Pequeno selo ou pincelada no canto do item da galeria */
-.gallery-item::after {
-    content: '\2726'; /* Um ícone de estrela Unicode, simula um selo */
-    font-size: 1.5em;
-    color: #9500ff;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    opacity: 0.7;
-    transform: rotate(15deg); /* Leve rotação */
+nav ul li {
+    margin-left: 30px;
 }
 
-/* Decoração nos itens dos artistas */
-.artist-item {
-    position: relative;
+nav ul li a {
+    color: #fff; /* White navigation links */
+    font-weight: bold;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
 }
 
-/* Uma pequena "mancha de tinta" ou "pincelada" de fundo */
-.artist-item::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    width: 40px;
-    height: 40px;
-    background-color: rgba(234, 0, 255, 0.205); /* Cor azul suave */
-    border-radius: 50%;
-    z-index: -1;
-    filter: blur(10px); /* Efeito borrado */
+nav ul li a:hover {
+    color: #ffe0ff; /* Lighter on hover */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
 }
 
-.artist-item::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    right: -10px;
-    width: 30px;
-    height: 30px;
-    background-color: rgba(255, 7, 238, 0.1); /* Cor amarela suave */
-    border-radius: 50%;
-    z-index: -1;
-    filter: blur(8px);
+/* --- Hero Section --- */
+.hero {
+    background: linear-gradient(rgba(39, 0, 58, 0.6), rgba(39, 0, 58, 0.8)),
+                url('https://via.placeholder.com/1500x500?text=Sua+Arte+Aqui') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 120px 20px; /* More padding */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 550px; /* Taller hero section */
+    background-position: center;
+    animation: pan-background 30s linear infinite alternate; /* Subtle panning effect */
 }
 
-/* Decoração para o botão principal (Explore Galeria) */
+@keyframes pan-background {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: 100% 100%;
+    }
+}
+
+.hero-content {
+    background-color: rgba(39, 0, 58, 0.7); /* Darker, more opaque overlay */
+    padding: 40px; /* More padding */
+    border-radius: 15px; /* More rounded */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Stronger shadow */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Subtle white border */
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif; /* Use Playfair Display for hero title */
+    color: #fff;
+    font-size: 4.5em; /* Larger title */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+}
+
+.hero-content p {
+    font-family: 'Lora', serif; /* Lora for hero description */
+    font-size: 1.3em;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+/* --- Call to Action Button --- */
 .btn {
-    border: 2px solid transparent; /* Adiciona uma borda transparente para transição */
+    display: inline-block;
+    background-color: #b560e0;
+    color: #fff;
+    padding: 12px 25px; /* Slightly more padding */
+    border-radius: 30px; /* More rounded */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    overflow: hidden; /* Para o efeito de brilho */
+    overflow: hidden;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(181, 96, 224, 0.4); /* Initial shadow */
+    animation: pulse-glow 2s infinite alternate; /* New glow animation */
+    border: 2px solid transparent; /* Adds a transparent border for transition */
 }
 
 .btn::before {
@@ -147,127 +251,23 @@ h2::after {
     left: 100%;
 }
 
-
-
-
-
-
-
-
-/* Estilos Gerais */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    background-color: #f3dfff;
-    color: #37013d;
-    background-color: #f5d4ff;
-    color: #2d0137;
-    line-height: 1.6;
-}
-
-h1, h2, h3 {
-    color: #2c0031;
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-a {
-    text-decoration: none;
-    color: #9535c5;
-}
-
-.btn {
-    display: inline-block;
-    background-color: #b560e0;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
 .btn:hover {
     background-color: #cf81ff;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(181, 96, 224, 0.6);
 }
 
-/* Header e Navegação */
-header {
-    background-color: #fff;
-    color: #400060;
-    padding: 15px 0;
-    box-shadow: 0 2px 5px rgba(45, 0, 55, 0.196);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+/* Keyframes for the glow effect */
+@keyframes pulse-glow {
+    from {
+        box-shadow: 0 5px 15px rgba(181, 96, 224, 0.4);
+    }
+    to {
+        box-shadow: 0 5px 25px rgba(181, 96, 224, 0.7), 0 0 10px rgba(255, 255, 255, 0.5);
+    }
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.logo a {
-    font-size: 1.8em;
-    font-weight: bold;
-    color: #b171f5;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-}
-
-nav ul li {
-    margin-left: 30px;
-}
-
-nav ul li a {
-    color: #333;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #7a009f;
-}
-
-/* Seção Hero */
-.hero {
-    background: url('https://via.placeholder.com/1500x500?text=Sua+Arte+Aqui') no-repeat center center/cover;
-    color: #fff;
-    text-align: center;
-    padding: 100px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 500px;
-}
-
-.hero-content {
-    background-color: rgba(39, 0, 58, 0.5);
-    padding: 30px;
-    border-radius: 10px;
-}
-
-.hero-content h1 {
-    color: #fff;
-    font-size: 3em;
-    margin-bottom: 10px;
-}
-
-.hero-content p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-}
-
-/* Seção da Galeria */
+/* --- Gallery Section --- */
 .gallery-section {
     padding: 60px 20px;
     max-width: 1200px;
@@ -286,15 +286,19 @@ nav ul li a:hover {
 
 .gallery-item {
     background-color: #fff;
-    border: 1px solid #e9adf0;
+    border: 1px solid #d5c2da;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(106, 0, 132, 0.1);
-    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(89, 1, 100, 0.15); /* Increased shadow */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    padding-bottom: 20px; /* Space for the bottom "Polaroid" effect */
+    text-align: center;
+    position: relative;
 }
 
 .gallery-item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px) rotate(1deg); /* Lift and slightly rotate on hover */
+    box-shadow: 0 8px 20px rgba(89, 1, 100, 0.25);
 }
 
 .gallery-item img {
@@ -302,6 +306,22 @@ nav ul li a:hover {
     height: 200px;
     object-fit: cover;
     display: block;
+    margin-bottom: 15px;
+    border: 5px solid #fff; /* White inner border for the photo */
+    box-shadow: 0 0 8px rgba(200, 0, 255, 0.15); /* Softer inner shadow */
+}
+
+/* Small "seal" or brushstroke in the corner of the gallery item */
+.gallery-item::after {
+    content: '✨'; /* A sparkle icon */
+    font-size: 1.8em; /* Slightly larger */
+    color: #9500ff;
+    position: absolute;
+    bottom: 5px; /* Adjust position */
+    right: 15px; /* Adjust position */
+    opacity: 0.8;
+    transform: rotate(-10deg); /* Rotate for artistic flair */
+    filter: drop-shadow(0 0 3px rgba(149, 0, 255, 0.5)); /* Glow effect */
 }
 
 .gallery-item h3 {
@@ -317,7 +337,7 @@ nav ul li a:hover {
     text-align: left;
 }
 
-/* Seções Sobre e Contato */
+/* --- About and Contact Sections --- */
 .about-section, .contact-section {
     padding: 60px 20px;
     max-width: 1200px;
@@ -361,48 +381,7 @@ nav ul li a:hover {
     font-size: 1.1em;
 }
 
-/* Footer */
-footer {
-    background-color: #25023a;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 50px;
-}
-
-/* Responsividade */
-@media (max-width: 768px) {
-    nav {
-        flex-direction: column;
-    }
-
-    nav ul {
-        margin-top: 15px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    nav ul li {
-        margin: 0 10px 10px;
-    }
-
-    .hero-content h1 {
-        font-size: 2.5em;
-    }
-
-    .hero-content p {
-        font-size: 1em;
-    }
-
-    .gallery-grid {
-        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
-    }
-}
-
-
-
-/* --- */
-/* Seção de Dicas */
+/* --- Tips Section --- */
 .tips-section {
     padding: 60px 20px;
     max-width: 1200px;
@@ -437,25 +416,16 @@ footer {
     color: #6d418d;
     font-size: 1.4em;
     margin-bottom: 10px;
-    text-align: left; /* Alinha o título da dica à esquerda */
+    text-align: left; /* Align tip title to the left */
 }
 
 .tip-item p {
     font-size: 1em;
-    color: #3a003a3d;
-    text-align: left; /* Alinha o texto da dica à esquerda */
+    color: #3a003a; /* Adjusted opacity for direct use */
+    text-align: left; /* Align tip text to the left */
 }
 
-/* Responsividade para a seção de Dicas */
-@media (max-width: 768px) {
-    .tips-grid {
-        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
-    }
-}
-
-
-/* --- */
-/* Seção de Artistas */
+/* --- Artists Section --- */
 .artists-section {
     padding: 60px 20px;
     max-width: 1200px;
@@ -463,7 +433,7 @@ footer {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    text-align: center; /* Centraliza o título e descrição */
+    text-align: center; /* Center title and description */
 }
 
 .artists-section .section-description {
@@ -487,9 +457,38 @@ footer {
     border: 1px solid #eee;
     border-radius: 8px;
     padding: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08); /* Slightly more pronounced shadow */
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; /* Ensure splatters are contained */
+    position: relative; /* Needed for pseudo-elements */
+}
+
+/* Artist item "paint splatter" background */
+.artist-item::before,
+.artist-item::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(15px); /* Increased blur for a softer effect */
+    opacity: 0.6;
+    z-index: -1;
+}
+
+.artist-item::before {
+    top: -20px;
+    left: -20px;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(234, 0, 255, 0.3); /* Vibrant purple */
+}
+
+.artist-item::after {
+    bottom: -20px;
+    right: -20px;
+    width: 50px;
+    height: 50px;
+    background-color: rgba(255, 7, 238, 0.2); /* Pinkish-purple */
 }
 
 .artist-item:hover {
@@ -498,12 +497,12 @@ footer {
 }
 
 .artist-item img {
-    width: 150px; /* Tamanho fixo para as imagens dos artistas */
+    width: 150px; /* Fixed size for artist images */
     height: 150px;
-    border-radius: 50%; /* Torna as imagens circulares */
-    object-fit: cover; /* Garante que a imagem preencha o círculo */
+    border-radius: 50%; /* Make images circular */
+    object-fit: cover; /* Ensures image fills the circle */
     margin-bottom: 15px;
-    border: 3px solid #e7b8f8; /* Borda colorida para destaque */
+    border: 3px solid #e7b8f8; /* Colored border for highlight */
 }
 
 .artist-item h3 {
@@ -516,9 +515,9 @@ footer {
     font-size: 0.95em;
     color: #5e3861;
     margin-bottom: 20px;
-    min-height: 80px; /* Para manter o tamanho do card mais consistente */
+    min-height: 80px; /* To maintain consistent card size */
     display: -webkit-box;
-    -webkit-line-clamp: 4; /* Limita o texto a 4 linhas */
+    -webkit-line-clamp: 4; /* Limit text to 4 lines */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -538,69 +537,18 @@ footer {
     background-color: #9800b3;
 }
 
-/* Responsividade para a seção de Artistas */
-@media (max-width: 768px) {
-    .artists-grid {
-        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
-    }
-}
-
-
-
-
-/* Estilos Gerais */
-body {
-    font-family: 'Lora', serif; /* Fonte principal para o corpo do texto */
-    line-height: 1.7;
-    color: #644269;
-    margin: 0;
-    background-color: #f8f8f8; /* Fundo suave para a página */
-}
-
-.container {
-    max-width: 900px; /* Largura máxima do conteúdo */
-    margin: 40px auto; /* Centraliza o conteúdo com margem superior e inferior */
-    padding: 0 20px;
-}
-
-h1, h2, h3 {
-    font-family: 'Playfair Display', serif; /* Fonte para títulos e subtítulos */
-    color: #901d98; /* Cor para os títulos */
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-h1 {
-    font-size: 3em;
-    margin-top: 60px;
-    border-bottom: 2px solid #d095dd; /* Linha de destaque */
-    padding-bottom: 15px;
-}
-
-h2 {
-    font-size: 2.2em;
-    margin-top: 50px;
-    color: #530e57;
-}
-
-h3 {
-    font-size: 1.8em;
-    color: #9d03a954;
-    margin-bottom: 15px;
-}
-
-/* Seções de Arte */
+/* --- Art Sections (General, e.g., 'art-section') --- */
 .art-section {
     background-color: #edcef9;
     padding: 40px;
-    border-radius: 8px; /* Cantos arredondados */
-    box-shadow: 0 4px 15px rgba(247, 239, 239, 0.08); /* Sombra suave */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(247, 239, 239, 0.08); /* Soft shadow */
     margin-bottom: 50px;
-    transition: transform 0.3s ease-in-out; /* Efeito de transição */
+    transition: transform 0.3s ease-in-out; /* Transition effect */
 }
 
 .art-section:hover {
-    transform: translateY(-5px); /* Eleva a seção ao passar o mouse */
+    transform: translateY(-5px); /* Lift section on hover */
 }
 
 .art-section p {
@@ -609,7 +557,7 @@ h3 {
 }
 
 .art-section ul {
-    list-style: none; /* Remove marcadores de lista padrão */
+    list-style: none; /* Remove default list markers */
     padding: 0;
     margin-left: 20px;
 }
@@ -617,11 +565,11 @@ h3 {
 .art-section ul li {
     position: relative;
     margin-bottom: 10px;
-    padding-left: 25px; /* Espaço para o ícone customizado */
+    padding-left: 25px; /* Space for custom icon */
 }
 
 .art-section ul li::before {
-    content: '🎨'; /* Ícone de paleta de artista */
+    content: '🎨'; /* Artist palette icon */
     position: absolute;
     left: 0;
     color: #b56db8;
@@ -629,50 +577,14 @@ h3 {
     top: 0;
 }
 
-strong {
-    color: #572e5b;
-}
-
-/* Linha divisória */
+/* Divider line */
 hr {
     border: none;
-    border-top: 1px dashed #dcb5f5; /* Linha tracejada suave */
+    border-top: 1px dashed #dcb5f5; /* Soft dashed line */
     margin: 60px 0;
 }
 
-/* Rodapé */
-footer {
-    text-align: center;
-    padding: 30px;
-    color: #a167b3;
-    font-size: 0.9em;
-    background-color: #eee;
-    margin-top: 60px;
-}
-
-/* Responsividade básica */
-@media (max-width: 768px) {
-    .container {
-        margin: 20px auto;
-        padding: 0 15px;
-    }
-    h1 {
-        font-size: 2.5em;
-    }
-    h2 {
-        font-size: 1.8em;
-    }
-    h3 {
-        font-size: 1.5em;
-    }
-    .art-section {
-        padding: 25px;
-    }
-}
-
-
-/* --- */
-/* Seção de Outras Expressões Artísticas */
+/* --- Other Artistic Expressions Section --- */
 .other-expressions-section {
     padding: 60px 20px;
     max-width: 1200px;
@@ -703,10 +615,10 @@ footer {
     background-color: #ffffff;
     border: 1px solid #dcc5e3;
     border-radius: 8px;
-    padding-bottom: 20px; /* Ajuste para o conteúdo */
+    padding-bottom: 20px; /* Adjustment for content */
     box-shadow: 0 2px 5px rgba(70, 1, 75, 0.05);
     text-align: center;
-    overflow: hidden; /* Garante que a imagem não vaze */
+    overflow: hidden; /* Ensures image does not overflow */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -717,33 +629,88 @@ footer {
 
 .expression-item img {
     width: 100%;
-    height: 180px; /* Altura fixa para as imagens */
-    object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
-    display: block; /* Remove espaço extra abaixo da imagem */
+    height: 180px; /* Fixed height for images */
+    object-fit: cover; /* Ensures image fills space without distorting */
+    display: block; /* Removes extra space below the image */
     margin-bottom: 15px;
 }
 
 .expression-item h3 {
     color: #400149;
     font-size: 1.4em;
-    margin: 0 15px 10px; /* Margem interna para o título */
+    margin: 0 15px 10px; /* Inner margin for the title */
 }
 
 .expression-item p {
     font-size: 0.95em;
     color: #dbb0f1;
-    padding: 0 15px; /* Padding interno para o parágrafo */
-    min-height: 80px; /* Para manter o tamanho do card mais consistente */
+    padding: 0 15px; /* Inner padding for the paragraph */
+    min-height: 80px; /* To maintain consistent card size */
     display: -webkit-box;
-    -webkit-line-clamp: 4; /* Limita o texto a 4 linhas */
+    -webkit-line-clamp: 4; /* Limit text to 4 lines */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-/* Responsividade para a seção de Outras Expressões */
+/* --- Footer --- */
+footer {
+    background: linear-gradient(to right, #25023a, #530e57); /* Dark purple gradient */
+    color: #ffe0ff; /* Lighter text color */
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+    border-top: 5px solid #a167b3; /* Matching border */
+    /* Subtle checkerboard pattern */
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50"><rect x="0" y="0" width="25" height="25" fill="%23ffffff" opacity="0.05"/><rect x="25" y="25" width="25" height="25" fill="%23ffffff" opacity="0.05"/></svg>');
+    background-size: 50px 50px;
+}
+
+/* --- Responsiveness --- */
 @media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+
+    nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0 10px 10px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5em;
+    }
+
+    .hero-content p {
+        font-size: 1em;
+    }
+
+    .gallery-grid,
+    .tips-grid,
+    .artists-grid,
     .expressions-grid {
-        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+
+    .container {
+        margin: 20px auto;
+        padding: 0 15px;
+    }
+    h1 {
+        font-size: 2.5em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    h3 {
+        font-size: 1.5em;
+    }
+    .art-section {
+        padding: 25px;
     }
 }
