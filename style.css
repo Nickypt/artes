@@ -714,3 +714,101 @@ footer {
         padding: 25px;
     }
 }
+
+
+
+/* --- Videos Historia Section --- */
+.videos-historia-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: #fce8ff; /* Um tom um pouco diferente para destacar */
+    border-radius: 12px; /* Mais arredondado */
+    box-shadow: 0 5px 20px rgba(60, 0, 70, 0.18); /* Sombra mais suave e evidente */
+    text-align: center;
+    border: 3px solid #d095dd; /* Borda sutil */
+}
+
+.videos-historia-section h2 {
+    color: #7b008d; /* Cor mais escura para o título da seção */
+    margin-bottom: 20px;
+}
+
+.videos-historia-section .section-description {
+    font-size: 1.1em;
+    color: #7a507e;
+    margin-bottom: 50px; /* Mais espaço antes dos vídeos */
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px; /* Aumenta o espaçamento entre os vídeos */
+    margin-top: 30px;
+}
+
+.video-item {
+    background-color: #ffffff;
+    border: 1px solid #e0cbe7;
+    border-radius: 10px; /* Arredonda mais as bordas dos itens */
+    padding: 25px; /* Mais padding interno */
+    box-shadow: 0 4px 15px rgba(90, 0, 100, 0.1); /* Sombra mais pronunciada */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    overflow: hidden; /* Garante que o conteúdo não vaze */
+    position: relative; /* Para efeitos futuros, se quiser */
+}
+
+.video-item:hover {
+    transform: translateY(-8px) scale(1.02); /* Levanta e aumenta ligeiramente no hover */
+    box-shadow: 0 8px 25px rgba(90, 0, 100, 0.2); /* Sombra mais intensa no hover */
+}
+
+.video-item h3 {
+    color: #5d006b; /* Cor para o título do vídeo */
+    font-size: 1.5em; /* Título um pouco maior */
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    /* 16:9 Aspect Ratio (divide 9 por 16 = 0.5625) */
+    padding-bottom: 56.25%; 
+    height: 0;
+    overflow: hidden;
+    margin-bottom: 20px;
+    border-radius: 8px; /* Arredonda as bordas do iframe */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none; /* Remove a borda padrão do iframe */
+}
+
+.video-item p {
+    font-size: 0.95em;
+    color: #8c6095;
+    line-height: 1.6;
+    margin: 0 10px;
+}
+
+/* Responsividade para a nova seção */
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+    }
+
+    .videos-historia-section {
+        padding: 40px 15px;
+    }
+}
