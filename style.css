@@ -812,3 +812,25 @@ footer {
         padding: 40px 15px;
     }
 }
+
+
+
+.art-discovery-button {
+    display: inline-block;
+    padding: 15px 30px;
+    background: linear-gradient(45deg, #ff6b6b, #48dbfb); /* Gradiente vibrante */
+    color: white;
+    text-decoration: none;
+    border-radius: 50px; /* Borda arredondada */
+    font-family: 'Montserrat', sans-serif; /* Fonte moderna */
+    font-size: 1.2em;
+    font-weight: bold;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Sombra para profundidade */
+    transition: all 0.3s ease; /* Efeito de transição */
+    letter-spacing: 1px;
+}
+
+.art-discovery-button:hover {
+    transform: translateY(-3px); /* Leve levantamento ao passar o mouse */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Sombra mais intensa */
+}
