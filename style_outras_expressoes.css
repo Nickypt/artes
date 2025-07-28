@@ -1,127 +1,201 @@
 /* Estilos Gerais */
+html {
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos na largura/altura total */
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+:root {
+    /* Cores */
+    --primary-color: #6a11cb; /* Roxo vibrante */
+    --secondary-color: #2575fc; /* Azul vibrante */
+    --accent-color: #ff6b6b; /* Vermelho/Rosa de destaque */
+    --background-light: #f0e6f6;
+    --background-dark: #d7e9f7;
+    --text-color-dark: #333;
+    --text-color-light: white;
+    --box-bg-light: #fcfcfc;
+    --definition-bg-start: #e0f7fa;
+    --definition-bg-end: #bbdefb;
+    --button-color: #f7b731; /* Amarelo botão */
+    --button-hover-color: #fc9c00;
+
+    /* Fontes */
+    --font-body: 'Montserrat', sans-serif;
+    --font-heading: 'Playfair Display', serif;
+
+    /* Sombras */
+    --shadow-small: 0 2px 10px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.15);
+    --shadow-large: 0 12px 40px rgba(0, 0, 0, 0.2);
+    --shadow-text: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
 body {
-    font-family: 'Montserrat', sans-serif;
+    font-family: var(--font-body);
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #f0e6f6, #d7e9f7); /* Fundo suave com gradiente */
-    color: #333;
-    line-height: 1.8;
-    overflow-x: hidden; /* Evita scroll horizontal indesejado */
+    background: linear-gradient(135deg, var(--background-light), var(--background-dark));
+    color: var(--text-color-dark);
+    line-height: 1.7; /* Ligeiramente ajustado para melhor legibilidade */
+    overflow-x: hidden;
+    scroll-behavior: smooth; /* Adiciona rolagem suave */
 }
 
 /* Cabeçalho */
 header {
-    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%); /* Um roxo e azul vibrante */
-    color: white;
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--text-color-light);
     text-align: center;
-    padding: 60px 20px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    padding: 80px 20px; /* Aumentado um pouco o padding vertical */
+    box-shadow: var(--shadow-medium);
     position: relative;
     overflow: hidden;
+    z-index: 10; /* Garante que o header fique acima de outros elementos se houver sobreposição */
+}
+
+header::before,
+header::after {
+    content: ''; /* Conteúdo ajustado para evitar chars direto no CSS */
+    position: absolute;
+    font-size: 5em;
+    opacity: 0.2;
+    pointer-events: none; /* Garante que os pseudo-elementos não interfiram com cliques */
+    user-select: none; /* Impede seleção de texto */
 }
 
 header::before {
     content: '✨';
-    position: absolute;
     top: 10px;
     left: 10px;
-    font-size: 5em;
-    opacity: 0.2;
-    transform: rotate(-20deg);
+    transform: rotate(-20deg) scale(1.2); /* Um pouco maior e rotacionado */
 }
 
 header::after {
     content: '🎨';
-    position: absolute;
     bottom: 10px;
     right: 10px;
-    font-size: 5em;
-    opacity: 0.2;
-    transform: rotate(20deg);
+    transform: rotate(20deg) scale(1.2); /* Um pouco maior e rotacionado */
 }
 
 h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.5em;
-    margin-bottom: 10px;
+    font-family: var(--font-heading);
+    font-size: 3.8em; /* Levemente aumentado */
+    margin-bottom: 0.2em; /* Uso de 'em' para espaçamento relativo */
     letter-spacing: 2px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    text-shadow: var(--shadow-text);
 }
 
 p.subtitle {
-    font-size: 1.3em;
+    font-size: 1.25em; /* Ajustado */
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0.5em auto 0; /* Espaçamento ajustado */
+    opacity: 0.9; /* Um pouco mais sutil */
 }
 
 /* Container Principal */
 .container {
     max-width: 1000px;
     margin: 40px auto;
-    padding: 20px;
-    background-color: white;
+    padding: 30px; /* Aumentado um pouco o padding */
+    background-color: var(--text-color-light);
     border-radius: 15px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-medium);
 }
 
 /* Seções */
 section {
     margin-bottom: 60px;
-    padding: 20px;
-    border-left: 5px solid #ff6b6b; /* Detalhe lateral */
-    background-color: #fcfcfc;
-    border-radius: 10px;
+    padding: 30px; /* Aumentado o padding */
+    border-left: 6px solid var(--accent-color); /* Borda mais proeminente */
+    background-color: var(--box-bg-light);
+    border-radius: 12px; /* Ajustado para um pouco mais de arredondamento */
     position: relative;
+    box-shadow: var(--shadow-small); /* Sombra suave para a seção */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adiciona transição ao passar o mouse */
+}
+
+section:hover {
+    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
+    box-shadow: var(--shadow-medium); /* Sombra mais proeminente no hover */
 }
 
 section::before {
     content: '';
     position: absolute;
-    top: -10px;
-    left: -10px;
-    width: 30px;
-    height: 30px;
-    background-color: #a779e9;
+    top: -15px; /* Ajustado */
+    left: -15px; /* Ajustado */
+    width: 35px; /* Ligeiramente maior */
+    height: 35px; /* Ligeiramente maior */
+    background-color: var(--primary-color); /* Usando variável */
     border-radius: 50%;
-    opacity: 0.3;
+    opacity: 0.2; /* Um pouco menos opaco */
+    z-index: -1; /* Para garantir que fique atrás do conteúdo da seção */
 }
 
 h2 {
-    font-family: 'Playfair Display', serif;
-    color: #6a11cb; /* Roxo do cabeçalho */
-    font-size: 2.5em;
+    font-family: var(--font-heading);
+    color: var(--primary-color);
+    font-size: 2.8em; /* Ligeiramente aumentado */
     margin-top: 0;
-    margin-bottom: 20px;
-    border-bottom: 2px dashed #ff6b6b; /* Linha tracejada embaixo */
-    padding-bottom: 10px;
+    margin-bottom: 25px; /* Ajustado */
+    border-bottom: 2px dashed var(--accent-color);
+    padding-bottom: 15px; /* Aumentado */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05); /* Sombra sutil para títulos */
 }
 
 h3 {
-    color: #2575fc; /* Azul do cabeçalho */
-    font-size: 1.8em;
-    margin-top: 30px;
+    color: var(--secondary-color);
+    font-size: 2em; /* Ligeiramente aumentado */
+    margin-top: 35px; /* Ajustado */
     margin-bottom: 15px;
+    position: relative; /* Para o pseudo-elemento abaixo */
+    padding-left: 15px; /* Espaço para o marcador */
 }
+
+h3::before {
+    content: '▪'; /* Marcador simples e elegante */
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-size: 0.8em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
 
 /* Exemplos de Arte */
 .art-example {
     display: flex;
     align-items: center;
     margin-bottom: 30px;
-    background-color: #f9f9f9;
-    padding: 15px;
+    background-color: var(--box-bg-light);
+    padding: 20px; /* Aumentado */
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    box-shadow: var(--shadow-small);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.art-example:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-medium);
 }
 
 .art-example img {
-    width: 150px;
+    min-width: 150px; /* Garante que a imagem não encolha demais em telas pequenas */
     height: 150px;
     object-fit: cover;
     border-radius: 8px;
-    margin-right: 20px;
-    border: 3px solid #ff6b6b;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-right: 25px; /* Ajustado */
+    border: 3px solid var(--accent-color);
+    box-shadow: var(--shadow-small);
+    transition: border-color 0.3s ease; /* Transição na borda */
+}
+
+.art-example:hover img {
+    border-color: var(--secondary-color); /* Muda a cor da borda no hover */
 }
 
 .art-example div {
@@ -130,87 +204,163 @@ h3 {
 
 /* Lista de Artistas */
 .artist-list {
-    list-style-type: '🌟 '; /* Marcador divertido */
-    padding-left: 25px;
+    list-style-type: none; /* Remove o marcador padrão */
+    padding-left: 0; /* Remove padding padrão */
 }
 
 .artist-list li {
-    margin-bottom: 10px;
+    margin-bottom: 12px; /* Ajustado */
+    position: relative;
+    padding-left: 30px; /* Espaço para o novo marcador */
+    font-size: 1.05em;
+}
+
+.artist-list li::before {
+    content: '🌟'; /* Mantém o marcador divertido */
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.1em;
+    line-height: 1; /* Garante que o ícone fique centralizado verticalmente */
 }
 
 /* Caixa de Definição de Arte */
 .definition-box {
-    background: linear-gradient(to right, #e0f7fa, #bbdefb);
-    padding: 30px;
-    border-radius: 15px;
-    border: 2px dashed #42a5f5;
-    margin-top: 40px;
+    background: linear-gradient(to right, var(--definition-bg-start), var(--definition-bg-end));
+    padding: 35px; /* Aumentado */
+    border-radius: 18px; /* Mais arredondado */
+    border: 3px dashed #42a5f5; /* Borda mais proeminente */
+    margin-top: 50px; /* Aumentado */
     text-align: center;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-medium);
 }
 
 .definition-box p {
-    font-size: 1.4em;
+    font-size: 1.6em; /* Aumentado */
     font-weight: bold;
     color: #1a237e;
-    font-family: 'Playfair Display', serif;
+    font-family: var(--font-heading);
+    margin-bottom: 0.5em; /* Espaçamento */
 }
 
 .definition-box span {
     display: block;
     margin-top: 15px;
-    font-size: 1.1em;
+    font-size: 1.15em; /* Ligeiramente aumentado */
     color: #424242;
 }
 
 /* Rodapé */
 footer {
     text-align: center;
-    padding: 30px 20px;
-    margin-top: 60px;
+    padding: 40px 20px; /* Aumentado */
+    margin-top: 80px; /* Aumentado */
     background: #333;
-    color: white;
+    color: var(--text-color-light);
     font-size: 0.9em;
-    border-top: 5px solid #ff6b6b;
+    border-top: 5px solid var(--accent-color);
+    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2); /* Sombra no rodapé */
 }
 
 /* Botão de Voltar */
 .back-button {
     display: inline-block;
-    margin-top: 30px;
-    padding: 12px 25px;
-    background-color: #f7b731; /* Amarelo vibrante */
-    color: white;
+    margin-top: 40px; /* Aumentado */
+    padding: 14px 30px; /* Aumentado */
+    background-color: var(--button-color);
+    color: var(--text-color-light);
     text-decoration: none;
     border-radius: 30px;
     font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    letter-spacing: 0.5px; /* Adicionado */
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Adicionada transição de sombra */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra no botão */
 }
 
 .back-button:hover {
-    background-color: #fc9c00;
-    transform: scale(1.05);
+    background-color: var(--button-hover-color);
+    transform: translateY(-2px) scale(1.02); /* Leve elevação e escala */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* Sombra mais intensa no hover */
 }
 
 /* Centraliza a seção do botão de voltar */
 .section-center {
     text-align: center;
+    padding-top: 20px; /* Adicionado um pouco de padding para espaçamento */
 }
 
 /* Media Queries para Responsividade */
 @media (max-width: 768px) {
+    header {
+        padding: 60px 15px;
+    }
     h1 {
-        font-size: 2.5em;
+        font-size: 2.8em; /* Ajuste para telas menores */
+    }
+    p.subtitle {
+        font-size: 1.1em;
+        padding: 0 10px; /* Padding para evitar que o texto grude nas bordas */
+    }
+    .container {
+        margin: 20px auto;
+        padding: 20px;
+    }
+    section {
+        padding: 20px;
+        margin-bottom: 40px;
     }
     h2 {
-        font-size: 2em;
+        font-size: 2.2em;
+        margin-bottom: 15px;
+    }
+    h3 {
+        font-size: 1.6em;
+        margin-top: 25px;
     }
     .art-example {
         flex-direction: column;
         text-align: center;
+        padding: 15px;
     }
     .art-example img {
         margin-right: 0;
         margin-bottom: 15px;
+        width: 120px; /* Ligeiramente menor em mobile */
+        height: 120px;
+    }
+    .definition-box {
+        padding: 25px;
+        margin-top: 30px;
+    }
+    .definition-box p {
+        font-size: 1.3em;
+    }
+    .definition-box span {
+        font-size: 1em;
+    }
+    footer {
+        padding: 25px 15px;
+        margin-top: 40px;
+    }
+    .back-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+        margin-top: 25px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.8em;
+    }
+    h3 {
+        font-size: 1.4em;
+    }
+    .artist-list li {
+        font-size: 0.95em;
     }
 }
