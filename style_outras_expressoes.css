@@ -8,359 +8,722 @@ html {
 }
 
 :root {
-    /* Cores */
-    --primary-color: #6a11cb; /* Roxo vibrante */
-    --secondary-color: #2575fc; /* Azul vibrante */
-    --accent-color: #ff6b6b; /* Vermelho/Rosa de destaque */
-    --background-light: #f0e6f6;
-    --background-dark: #d7e9f7;
-    --text-color-dark: #333;
-    --text-color-light: white;
-    --box-bg-light: #fcfcfc;
-    --definition-bg-start: #e0f7fa;
-    --definition-bg-end: #bbdefb;
-    --button-color: #f7b731; /* Amarelo botão */
-    --button-hover-color: #fc9c00;
+    /* Cores (Paleta mais rica e vibrante, inspirada em galerias e tintas) */
+    --color-primary-dark: #4a0e63; /* Roxo profundo, como uma tela escura */
+    --color-primary-light: #8e44ad; /* Roxo médio */
+    --color-accent-blue: #3498db; /* Azul elétrico, como um pigmento vibrante */
+    --color-accent-green: #2ecc71; /* Verde esmeralda, fresco */
+    --color-highlight-yellow: #f1c40f; /* Amarelo ouro, para detalhes e brilho */
+    --color-light-bg: #fdfdfd; /* Fundo principal claro */
+    --color-dark-bg: #eaf2f8; /* Fundo secundário, sutilmente azulado */
+    --color-text-dark: #2c3e50; /* Texto principal escuro */
+    --color-text-light: #ffffff; /* Texto claro */
+    --color-border-subtle: #dcdde1; /* Borda suave */
+    --color-button: #e67e22; /* Laranja queimado para botões */
+    --color-button-hover: #d35400; /* Laranja mais escuro no hover */
 
     /* Fontes */
     --font-body: 'Montserrat', sans-serif;
-    --font-heading: 'Playfair Display', serif;
+    --font-heading: 'Playfair Display', serif; /* Mantém a elegância para títulos */
+    --font-handwriting: 'Dancing Script', cursive; /* Para citações ou detalhes únicos */
 
-    /* Sombras */
-    --shadow-small: 0 2px 10px rgba(0, 0, 0, 0.08);
-    --shadow-medium: 0 8px 30px rgba(0, 0, 0, 0.15);
-    --shadow-large: 0 12px 40px rgba(0, 0, 0, 0.2);
-    --shadow-text: 2px 2px 5px rgba(0, 0, 0, 0.4);
+    /* Sombras (Mais suaves e realistas) */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.25);
+    --shadow-text-light: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    --shadow-text-dark: 1px 1px 2px rgba(255, 255, 255, 0.5);
 }
 
 body {
     font-family: var(--font-body);
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, var(--background-light), var(--background-dark));
-    color: var(--text-color-dark);
-    line-height: 1.7; /* Ligeiramente ajustado para melhor legibilidade */
-    overflow-x: hidden;
-    scroll-behavior: smooth; /* Adiciona rolagem suave */
+    background: linear-gradient(135deg, var(--color-light-bg) 0%, var(--color-dark-bg) 100%);
+    color: var(--color-text-dark);
+    line-height: 1.8; /* Mais espaçamento para melhor legibilidade */
+    overflow-x: hidden; /* Evita rolagem horizontal */
+    scroll-behavior: smooth; /* Rolagem suave ao navegar por âncoras */
+    min-height: 100vh; /* Garante que o body ocupe a altura total da viewport */
+    display: flex; /* Para o footer ficar no final da página */
+    flex-direction: column; /* Para o footer ficar no final da página */
 }
+
+/* --- Animações --- */
+@keyframes fadeInScale {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideInLeft {
+    from { opacity: 0; transform: translateX(-50px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes pulseShadow {
+    0% { box-shadow: var(--shadow-md); }
+    50% { box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25); }
+    100% { box-shadow: var(--shadow-md); }
+}
+
+@keyframes rotateAndScale {
+    0% { transform: rotate(0deg) scale(1); }
+    50% { transform: rotate(5deg) scale(1.02); }
+    100% { transform: rotate(0deg) scale(1); }
+}
+
+@keyframes shine {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
 
 /* Cabeçalho */
 header {
-    background: linear-gradient(90deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-    color: var(--text-color-light);
+    background: linear-gradient(90deg, var(--color-primary-dark) 0%, var(--color-primary-light) 100%);
+    color: var(--color-text-light);
     text-align: center;
-    padding: 80px 20px; /* Aumentado um pouco o padding vertical */
-    box-shadow: var(--shadow-medium);
+    padding: 100px 20px 60px; /* Mais padding para um visual imponente */
+    box-shadow: var(--shadow-lg);
     position: relative;
     overflow: hidden;
-    z-index: 10; /* Garante que o header fique acima de outros elementos se houver sobreposição */
+    z-index: 10;
+    animation: fadeInScale 1s ease-out; /* Animação de entrada */
 }
 
 header::before,
 header::after {
-    content: ''; /* Conteúdo ajustado para evitar chars direto no CSS */
+    content: '';
     position: absolute;
-    font-size: 5em;
-    opacity: 0.2;
-    pointer-events: none; /* Garante que os pseudo-elementos não interfiram com cliques */
-    user-select: none; /* Impede seleção de texto */
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    opacity: 0.08; /* Mais sutil */
+    filter: blur(25px); /* Efeito de brilho */
+    pointer-events: none;
+    z-index: 0;
 }
 
 header::before {
-    content: '✨';
-    top: 10px;
-    left: 10px;
-    transform: rotate(-20deg) scale(1.2); /* Um pouco maior e rotacionado */
+    background: radial-gradient(circle, var(--color-highlight-yellow) 0%, transparent 70%);
+    top: -50px;
+    left: -50px;
+    animation: pulseShadow 4s infinite alternate ease-in-out; /* Animação sutil de pulsação */
 }
 
 header::after {
-    content: '🎨';
-    bottom: 10px;
-    right: 10px;
-    transform: rotate(20deg) scale(1.2); /* Um pouco maior e rotacionado */
+    background: radial-gradient(circle, var(--color-accent-blue) 0%, transparent 70%);
+    bottom: -50px;
+    right: -50px;
+    animation: pulseShadow 4s infinite alternate ease-in-out 1s; /* Delay para dessincronizar */
 }
 
-h1 {
+header h1 {
     font-family: var(--font-heading);
-    font-size: 3.8em; /* Levemente aumentado */
-    margin-bottom: 0.2em; /* Uso de 'em' para espaçamento relativo */
-    letter-spacing: 2px;
-    text-shadow: var(--shadow-text);
+    font-size: 4.5em; /* Aumentado para impacto */
+    margin-bottom: 0.15em;
+    letter-spacing: 3px; /* Mais espaçamento entre letras */
+    text-shadow: var(--shadow-text-light);
+    position: relative; /* Para garantir que fique acima dos pseudo-elementos */
+    z-index: 1;
 }
 
-p.subtitle {
-    font-size: 1.25em; /* Ajustado */
-    max-width: 800px;
-    margin: 0.5em auto 0; /* Espaçamento ajustado */
-    opacity: 0.9; /* Um pouco mais sutil */
+header p.subtitle {
+    font-size: 1.4em; /* Ligeiramente maior */
+    max-width: 900px;
+    margin: 0.6em auto 0;
+    opacity: 0.95;
+    position: relative;
+    z-index: 1;
+    font-style: italic; /* Subtítulo com itálico */
 }
 
 /* Container Principal */
 .container {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 30px; /* Aumentado um pouco o padding */
-    background-color: var(--text-color-light);
-    border-radius: 15px;
-    box-shadow: var(--shadow-medium);
+    max-width: 1100px; /* Levemente mais largo */
+    margin: 60px auto; /* Mais margem superior */
+    padding: 40px; /* Aumentado o padding interno */
+    background-color: var(--color-light-bg);
+    border-radius: 20px; /* Mais arredondado */
+    box-shadow: var(--shadow-lg);
+    flex-grow: 1; /* Permite que o container cresça e preencha o espaço */
+    position: relative;
+    z-index: 5;
 }
 
 /* Seções */
 section {
-    margin-bottom: 60px;
-    padding: 30px; /* Aumentado o padding */
-    border-left: 6px solid var(--accent-color); /* Borda mais proeminente */
-    background-color: var(--box-bg-light);
-    border-radius: 12px; /* Ajustado para um pouco mais de arredondamento */
+    margin-bottom: 70px; /* Mais espaçamento entre seções */
+    padding: 40px; /* Aumentado */
+    border-left: 8px solid var(--color-accent-blue); /* Borda mais grossa e colorida */
+    background-color: #ffffff; /* Fundo branco puro para destaque */
+    border-radius: 15px;
+    box-shadow: var(--shadow-md);
     position: relative;
-    box-shadow: var(--shadow-small); /* Sombra suave para a seção */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Adiciona transição ao passar o mouse */
+    overflow: hidden; /* Para conter os pseudo-elementos */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Transição mais suave */
+    animation: fadeInScale 0.8s ease-out; /* Animação de entrada para seções */
 }
 
 section:hover {
-    transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
-    box-shadow: var(--shadow-medium); /* Sombra mais proeminente no hover */
+    transform: translateY(-8px); /* Elevação maior no hover */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); /* Sombra mais profunda */
 }
 
+/* Detalhe de "tinta" ou "pincelada" no canto */
 section::before {
     content: '';
     position: absolute;
-    top: -15px; /* Ajustado */
-    left: -15px; /* Ajustado */
-    width: 35px; /* Ligeiramente maior */
-    height: 35px; /* Ligeiramente maior */
-    background-color: var(--primary-color); /* Usando variável */
+    top: -20px; /* Ajustado */
+    left: -20px; /* Ajustado */
+    width: 60px; /* Maior */
+    height: 60px; /* Maior */
+    background: radial-gradient(circle, var(--color-highlight-yellow) 0%, transparent 70%);
     border-radius: 50%;
-    opacity: 0.2; /* Um pouco menos opaco */
-    z-index: -1; /* Para garantir que fique atrás do conteúdo da seção */
+    opacity: 0.15; /* Mais visível */
+    filter: blur(10px);
+    z-index: 0;
+}
+section::after { /* Novo pseudo-elemento para mais detalhe */
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, var(--color-accent-green) 0%, transparent 70%);
+    border-radius: 50%;
+    opacity: 0.1;
+    filter: blur(8px);
+    z-index: 0;
 }
 
-h2 {
+
+section h2 {
     font-family: var(--font-heading);
-    color: var(--primary-color);
-    font-size: 2.8em; /* Ligeiramente aumentado */
+    color: var(--color-primary-dark);
+    font-size: 3.2em; /* Mais destaque */
     margin-top: 0;
-    margin-bottom: 25px; /* Ajustado */
-    border-bottom: 2px dashed var(--accent-color);
-    padding-bottom: 15px; /* Aumentado */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05); /* Sombra sutil para títulos */
+    margin-bottom: 30px; /* Mais espaçamento */
+    border-bottom: 3px dashed var(--color-highlight-yellow); /* Borda estilizada */
+    padding-bottom: 20px; /* Aumentado */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.08);
+    position: relative;
+    text-align: center; /* Centraliza o título */
 }
 
-h3 {
-    color: var(--secondary-color);
-    font-size: 2em; /* Ligeiramente aumentado */
-    margin-top: 35px; /* Ajustado */
-    margin-bottom: 15px;
-    position: relative; /* Para o pseudo-elemento abaixo */
-    padding-left: 15px; /* Espaço para o marcador */
+section h2::after { /* Adiciona um ícone ao lado do título */
+    content: '🖌️'; /* Ícone de pincel */
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) translateX(15px); /* Ajusta posição */
+    font-size: 0.7em;
+    opacity: 0.8;
 }
 
-h3::before {
-    content: '▪'; /* Marcador simples e elegante */
+section h3 {
+    color: var(--color-accent-blue);
+    font-size: 2.2em; /* Mais destaque */
+    margin-top: 40px; /* Mais espaçamento */
+    margin-bottom: 20px;
+    position: relative;
+    padding-left: 25px; /* Mais espaço para o marcador */
+}
+
+section h3::before {
+    content: '•'; /* Marcador simples e elegante */
     position: absolute;
     left: 0;
-    color: var(--accent-color);
-    font-size: 0.8em;
+    color: var(--color-highlight-yellow); /* Cor de destaque */
+    font-size: 1.2em;
     top: 50%;
     transform: translateY(-50%);
 }
 
+section p {
+    font-size: 1.15em;
+    margin-bottom: 20px;
+    color: var(--color-text-dark);
+    text-align: justify;
+}
 
 /* Exemplos de Arte */
 .art-example {
     display: flex;
-    align-items: center;
-    margin-bottom: 30px;
-    background-color: var(--box-bg-light);
-    padding: 20px; /* Aumentado */
-    border-radius: 10px;
-    box-shadow: var(--shadow-small);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    align-items: flex-start; /* Alinha o texto ao topo da imagem */
+    margin-bottom: 35px; /* Mais espaçamento */
+    background-color: var(--color-light-bg);
+    padding: 25px; /* Aumentado */
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    border: 1px solid var(--color-border-subtle); /* Borda sutil */
+    animation: slideInLeft 0.7s ease-out forwards; /* Animação de entrada */
+    opacity: 0; /* Começa invisível para a animação */
+}
+
+.art-example:nth-child(even) { /* Animação escalonada */
+    animation-delay: 0.2s;
+}
+.art-example:nth-child(odd) {
+    animation-delay: 0.1s;
 }
 
 .art-example:hover {
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-medium);
+    transform: translateY(-5px); /* Elevação no hover */
+    box-shadow: var(--shadow-md);
 }
 
 .art-example img {
-    min-width: 150px; /* Garante que a imagem não encolha demais em telas pequenas */
-    height: 150px;
+    min-width: 160px; /* Maior */
+    height: 160px;
     object-fit: cover;
-    border-radius: 8px;
-    margin-right: 25px; /* Ajustado */
-    border: 3px solid var(--accent-color);
-    box-shadow: var(--shadow-small);
-    transition: border-color 0.3s ease; /* Transição na borda */
+    border-radius: 10px; /* Mais arredondado */
+    margin-right: 30px; /* Mais espaçamento */
+    border: 4px solid var(--color-accent-blue); /* Borda mais grossa */
+    box-shadow: var(--shadow-sm);
+    transition: border-color 0.3s ease, transform 0.3s ease; /* Transição para rotação */
 }
 
 .art-example:hover img {
-    border-color: var(--secondary-color); /* Muda a cor da borda no hover */
+    border-color: var(--color-primary-dark); /* Muda a cor da borda no hover */
+    transform: rotate(2deg) scale(1.03); /* Leve rotação e escala no hover */
 }
 
 .art-example div {
     flex: 1;
 }
 
+.art-example h4 {
+    font-family: var(--font-heading);
+    font-size: 1.6em;
+    color: var(--color-text-dark);
+    margin-bottom: 10px;
+}
+
 /* Lista de Artistas */
 .artist-list {
-    list-style-type: none; /* Remove o marcador padrão */
-    padding-left: 0; /* Remove padding padrão */
+    list-style-type: none;
+    padding-left: 0;
+    display: flex; /* Para alinhar os itens em linha */
+    flex-wrap: wrap; /* Quebra linha se não houver espaço */
+    gap: 15px; /* Espaçamento entre os itens */
+    margin-top: 25px;
 }
 
 .artist-list li {
-    margin-bottom: 12px; /* Ajustado */
+    background-color: var(--color-accent-green); /* Cor de fundo para cada nome */
+    color: var(--color-text-light);
+    padding: 10px 20px;
+    border-radius: 25px; /* Pill shape */
+    font-weight: bold;
+    font-size: 0.95em;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.3s ease;
+    cursor: pointer;
     position: relative;
-    padding-left: 30px; /* Espaço para o novo marcador */
-    font-size: 1.05em;
+    overflow: hidden;
 }
 
 .artist-list li::before {
-    content: '🌟'; /* Mantém o marcador divertido */
+    content: '⭐'; /* Ícone de estrela */
     position: absolute;
-    left: 0;
+    right: -20px; /* Fora da vista */
     top: 50%;
-    transform: translateY(-50%);
-    font-size: 1.1em;
-    line-height: 1; /* Garante que o ícone fique centralizado verticalmente */
+    transform: translateY(-50%) scale(0.5); /* Inicia menor */
+    opacity: 0;
+    transition: all 0.3s ease;
 }
+
+.artist-list li:hover {
+    background-color: var(--color-primary-dark);
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: var(--shadow-md);
+}
+
+.artist-list li:hover::before {
+    right: 5px; /* Entra na vista */
+    opacity: 1;
+    transform: translateY(-50%) scale(1); /* Cresce para o tamanho normal */
+}
+
 
 /* Caixa de Definição de Arte */
 .definition-box {
-    background: linear-gradient(to right, var(--definition-bg-start), var(--definition-bg-end));
-    padding: 35px; /* Aumentado */
-    border-radius: 18px; /* Mais arredondado */
-    border: 3px dashed #42a5f5; /* Borda mais proeminente */
-    margin-top: 50px; /* Aumentado */
+    background: linear-gradient(to right, #e0f7fa, #bbdefb); /* Gradiente suave */
+    padding: 40px; /* Mais padding */
+    border-radius: 20px; /* Mais arredondado */
+    border: 2px dashed var(--color-accent-blue); /* Borda pontilhada vibrante */
+    margin-top: 60px; /* Mais margem superior */
     text-align: center;
-    box-shadow: var(--shadow-medium);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+    animation: pulseShadow 3s infinite alternate; /* Animação de pulsação na sombra */
 }
 
+.definition-box::before, .definition-box::after {
+    font-size: 3em;
+    opacity: 0.4;
+    position: absolute;
+    z-index: 0;
+}
+.definition-box::before {
+    content: '💬'; /* Balão de fala */
+    top: 15px;
+    left: 15px;
+}
+.definition-box::after {
+    content: '🧠'; /* Cérebro */
+    bottom: 15px;
+    right: 15px;
+}
+
+
 .definition-box p {
-    font-size: 1.6em; /* Aumentado */
+    font-size: 1.8em; /* Maior */
     font-weight: bold;
-    color: #1a237e;
-    font-family: var(--font-heading);
-    margin-bottom: 0.5em; /* Espaçamento */
+    color: var(--color-primary-dark);
+    font-family: var(--font-handwriting); /* Fonte manuscrita para a citação */
+    margin-bottom: 0.8em;
+    text-shadow: var(--shadow-text-dark);
+    position: relative;
+    z-index: 1;
 }
 
 .definition-box span {
     display: block;
-    margin-top: 15px;
-    font-size: 1.15em; /* Ligeiramente aumentado */
-    color: #424242;
+    margin-top: 18px;
+    font-size: 1.2em; /* Maior */
+    color: var(--color-text-dark);
+    position: relative;
+    z-index: 1;
 }
 
-/* Rodapé */
-footer {
+/* Lista de Elementos Comuns da Arte */
+.section ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 30px;
+}
+
+.section ul li {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    padding-left: 35px; /* Mais espaço */
+    position: relative;
+    color: var(--color-text-dark);
+}
+
+.section ul li strong {
+    color: var(--color-primary-dark);
+    font-weight: 700;
+}
+
+.section ul li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent-green); /* Cor de destaque */
+    font-weight: bold;
+    font-size: 1.3em;
+    line-height: 1;
+    transform: translateY(-50%) rotate(5deg); /* Leve rotação */
+    top: 50%;
+}
+
+/* Separador de Seções */
+hr.artistic-divider {
+    border: none;
+    height: 10px; /* Altura da linha */
+    background: linear-gradient(90deg, var(--color-accent-blue) 0%, var(--color-highlight-yellow) 50%, var(--color-accent-green) 100%);
+    margin: 80px auto; /* Mais espaçamento */
+    width: 60%; /* Mais largo */
+    border-radius: 5px;
+    box-shadow: var(--shadow-sm);
+    animation: fadeInScale 1.5s ease-out; /* Animação de entrada */
+}
+
+/* Seção Final "Curioso(a) para Mergulhar Ainda Mais?" */
+.section-center {
     text-align: center;
-    padding: 40px 20px; /* Aumentado */
-    margin-top: 80px; /* Aumentado */
-    background: #333;
-    color: var(--text-color-light);
-    font-size: 0.9em;
-    border-top: 5px solid var(--accent-color);
-    box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2); /* Sombra no rodapé */
+    padding: 60px; /* Mais padding */
+    border: 3px dashed var(--color-highlight-yellow); /* Borda com mais impacto */
+    background-color: #fffaf0; /* Fundo mais claro e aconchegante */
+    box-shadow: var(--shadow-md);
+    margin-top: 80px; /* Mais margem superior */
+    border-radius: 25px; /* Mais arredondado */
+    position: relative;
+    overflow: hidden;
+    animation: fadeInScale 0.9s ease-out;
+}
+
+.section-center h2 {
+    color: var(--color-button); /* Cor do botão */
+    border-bottom: none; /* Remove a borda inferior para esta seção */
+    margin-bottom: 25px;
+    font-size: 2.8em;
+}
+
+.section-center p {
+    max-width: 900px;
+    margin: 0 auto 40px;
+    font-size: 1.25em;
+    line-height: 1.7;
 }
 
 /* Botão de Voltar */
 .back-button {
     display: inline-block;
-    margin-top: 40px; /* Aumentado */
-    padding: 14px 30px; /* Aumentado */
-    background-color: var(--button-color);
-    color: var(--text-color-light);
+    margin-top: 50px; /* Mais margem */
+    padding: 16px 35px; /* Mais padding */
+    background: linear-gradient(135deg, var(--color-button) 0%, var(--color-button-hover) 100%); /* Gradiente no botão */
+    color: var(--color-text-light);
     text-decoration: none;
-    border-radius: 30px;
+    border-radius: 35px; /* Mais arredondado */
     font-weight: bold;
-    letter-spacing: 0.5px; /* Adicionado */
-    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease; /* Adicionada transição de sombra */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Sombra no botão */
+    letter-spacing: 1px; /* Mais espaçamento */
+    transition: all 0.4s ease; /* Transição para todas as propriedades */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden; /* Para o efeito de brilho */
+    z-index: 1;
 }
 
 .back-button:hover {
-    background-color: var(--button-hover-color);
-    transform: translateY(-2px) scale(1.02); /* Leve elevação e escala */
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25); /* Sombra mais intensa no hover */
+    background: linear-gradient(135deg, var(--color-button-hover) 0%, var(--color-button) 100%);
+    transform: translateY(-4px) scale(1.03); /* Elevação e escala maiores */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-/* Centraliza a seção do botão de voltar */
-.section-center {
+.back-button::before { /* Efeito de brilho no botão */
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%; /* Inicia bem à esquerda */
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    transform: skewX(-30deg); /* Inclinação para o efeito de brilho */
+    transition: all 0.6s ease;
+    z-index: 0;
+}
+
+.back-button:hover::before {
+    left: 150%; /* Termina bem à direita */
+}
+
+
+/* Rodapé */
+footer {
     text-align: center;
-    padding-top: 20px; /* Adicionado um pouco de padding para espaçamento */
+    padding: 50px 20px; /* Mais padding */
+    margin-top: 100px; /* Mais margem superior */
+    background: var(--color-primary-dark);
+    color: var(--color-text-light);
+    font-size: 1em;
+    border-top: 8px solid var(--color-highlight-yellow); /* Borda mais grossa e amarela */
+    box-shadow: 0 -8px 20px rgba(0, 0, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+footer p {
+    margin: 0;
+    position: relative;
+    z-index: 1;
+    font-weight: 300; /* Mais leve */
+}
+
+/* Estilo para o ícone de brilho no rodapé */
+footer p::before {
+    content: '✨';
+    margin-right: 10px;
+    font-size: 1.2em;
+    animation: rotateAndScale 3s infinite ease-in-out; /* Animação de rotação e escala */
+    display: inline-block; /* Para aplicar a transformação */
 }
 
 /* Media Queries para Responsividade */
+@media (max-width: 992px) {
+    header h1 {
+        font-size: 3.8em;
+    }
+    header p.subtitle {
+        font-size: 1.2em;
+    }
+    .container {
+        margin: 40px auto;
+        padding: 30px;
+    }
+    section {
+        padding: 30px;
+        margin-bottom: 50px;
+    }
+    section h2 {
+        font-size: 2.5em;
+    }
+    section h3 {
+        font-size: 1.8em;
+    }
+    .art-example img {
+        min-width: 140px;
+        height: 140px;
+    }
+    .definition-box {
+        padding: 30px;
+    }
+    .definition-box p {
+        font-size: 1.5em;
+    }
+    .definition-box span {
+        font-size: 1.1em;
+    }
+    hr.artistic-divider {
+        width: 70%;
+        margin: 60px auto;
+    }
+    .section-center {
+        padding: 40px;
+    }
+    .section-center h2 {
+        font-size: 2.2em;
+    }
+    .back-button {
+        padding: 14px 30px;
+        font-size: 1em;
+    }
+}
+
 @media (max-width: 768px) {
     header {
-        padding: 60px 15px;
+        padding: 80px 15px 50px;
     }
-    h1 {
-        font-size: 2.8em; /* Ajuste para telas menores */
+    header h1 {
+        font-size: 3em;
+        letter-spacing: 1px;
     }
-    p.subtitle {
-        font-size: 1.1em;
-        padding: 0 10px; /* Padding para evitar que o texto grude nas bordas */
+    header p.subtitle {
+        font-size: 1em;
+        padding: 0 10px;
     }
     .container {
         margin: 20px auto;
         padding: 20px;
     }
     section {
-        padding: 20px;
+        padding: 25px;
         margin-bottom: 40px;
+        border-left: 6px solid var(--color-accent-blue);
     }
-    h2 {
-        font-size: 2.2em;
-        margin-bottom: 15px;
+    section h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
     }
-    h3 {
+    section h2::after {
+        content: ''; /* Remove o ícone em telas menores se ficar apertado */
+    }
+    section h3 {
         font-size: 1.6em;
-        margin-top: 25px;
+        margin-top: 30px;
+    }
+    section p {
+        font-size: 1em;
     }
     .art-example {
         flex-direction: column;
+        align-items: center;
         text-align: center;
         padding: 15px;
     }
     .art-example img {
         margin-right: 0;
         margin-bottom: 15px;
-        width: 120px; /* Ligeiramente menor em mobile */
+        width: 120px;
         height: 120px;
+    }
+    .artist-list {
+        justify-content: center;
+        gap: 10px;
+    }
+    .artist-list li {
+        font-size: 0.85em;
+        padding: 8px 15px;
     }
     .definition-box {
         padding: 25px;
-        margin-top: 30px;
+        margin-top: 40px;
     }
     .definition-box p {
         font-size: 1.3em;
     }
     .definition-box span {
-        font-size: 1em;
+        font-size: 0.95em;
     }
-    footer {
-        padding: 25px 15px;
-        margin-top: 40px;
+    .section ul li {
+        font-size: 1em;
+        padding-left: 25px;
+    }
+    hr.artistic-divider {
+        width: 80%;
+        margin: 50px auto;
+    }
+    .section-center {
+        padding: 30px;
+        margin-top: 50px;
+    }
+    .section-center h2 {
+        font-size: 2em;
+    }
+    .section-center p {
+        font-size: 1.1em;
+        margin-bottom: 30px;
     }
     .back-button {
-        padding: 10px 20px;
+        padding: 12px 25px;
         font-size: 0.9em;
-        margin-top: 25px;
+        margin-top: 35px;
+    }
+    footer {
+        padding: 35px 15px;
+        margin-top: 60px;
     }
 }
 
 @media (max-width: 480px) {
-    h1 {
-        font-size: 2em;
+    header h1 {
+        font-size: 2.2em;
     }
-    h2 {
+    header p.subtitle {
+        font-size: 0.9em;
+    }
+    section h2 {
         font-size: 1.8em;
     }
-    h3 {
+    section h3 {
+        font-size: 1.3em;
+        padding-left: 20px;
+    }
+    .art-example img {
+        width: 100px;
+        height: 100px;
+    }
+    .art-example h4 {
         font-size: 1.4em;
     }
-    .artist-list li {
-        font-size: 0.95em;
+    .definition-box p {
+        font-size: 1.1em;
+    }
+    .definition-box span {
+        font-size: 0.9em;
+    }
+    .section-center h2 {
+        font-size: 1.7em;
+    }
+    .back-button {
+        padding: 10px 20px;
+        font-size: 0.8em;
     }
 }
