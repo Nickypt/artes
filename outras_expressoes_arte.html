@@ -1,642 +1,178 @@
-/* Importação de Fontes do Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@400;700&family=Dancing+Script:wght@700&display=swap');
-
-/* Variáveis de Cores Inspiradas em Tintas e Galeria */
-:root {
-    --color-primary-dark: #2c3e50; /* Azul escuro, como uma tela noturna */
-    --color-primary-light: #34495e; /* Azul mais claro */
-    --color-accent-gold: #f1c40f; /* Dourado de moldura/luz de galeria */
-    --color-accent-teal: #1abc9c; /* Verde água vibrante, como pigmento */
-    --color-light-gray: #ecf0f1; /* Fundo suave de galeria */
-    --color-dark-text: #333333; /* Texto principal */
-    --color-light-text: #fdfdfd; /* Texto em fundos escuros */
-    --color-highlight-red: #e74c3c; /* Vermelho de destaque/paixão */
-    --color-shadow: rgba(0, 0, 0, 0.2); /* Sombra geral */
-    --color-glow: rgba(241, 196, 15, 0.6); /* Brilho dourado */
-}
-
-/* Reset Básico e Estilos Gerais */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    line-height: 1.8; /* Mais espaço entre linhas para leitura confortável */
-    color: var(--color-dark-text);
-    background: linear-gradient(135deg, var(--color-light-gray) 0%, #dcdde1 100%); /* Gradiente suave de fundo */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    overflow-x: hidden; /* Evita scroll horizontal indesejado */
-}
-
-a {
-    color: var(--color-accent-teal);
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.2s ease;
-}
-
-a:hover {
-    color: var(--color-primary-dark);
-    text-decoration: underline;
-    transform: translateY(-2px);
-}
-
-/* --- Animações Globais e Efeitos --- */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-@keyframes floatLight {
-    0% { transform: translateY(0px) rotate(0deg); opacity: 0.8; }
-    50% { transform: translateY(-10px) rotate(3deg); opacity: 1; }
-    100% { transform: translateY(0px) rotate(0deg); opacity: 0.8; }
-}
-
-@keyframes borderPulse {
-    0% { border-color: var(--color-accent-gold); box-shadow: 0 0 10px var(--color-glow); }
-    50% { border-color: var(--color-highlight-red); box-shadow: 0 0 20px var(--color-highlight-red); }
-    100% { border-color: var(--color-accent-gold); box-shadow: 0 0 10px var(--color-glow); }
-}
-
-/* --- Cabeçalho --- */
-header {
-    background: linear-gradient(to right, var(--color-primary-dark), var(--color-primary-light));
-    color: var(--color-light-text);
-    text-align: center;
-    padding: 80px 20px 50px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 15px var(--color-shadow);
-    animation: fadeIn 1s ease-out;
-}
-
-header::before, header::after {
-    content: '';
-    position: absolute;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, var(--color-accent-gold) 10%, transparent 70%);
-    opacity: 0.05;
-    border-radius: 50%;
-    animation: floatLight 8s ease-in-out infinite alternate;
-    z-index: 0;
-}
-
-header::before {
-    top: -50px;
-    left: -50px;
-}
-
-header::after {
-    bottom: -50px;
-    right: -50px;
-    animation-delay: 1.5s;
-}
-
-header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: 3.8em;
-    margin-bottom: 10px;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.4);
-    position: relative;
-    z-index: 1;
-}
-
-header .subtitle {
-    font-size: 1.3em;
-    max-width: 800px;
-    margin: 0 auto;
-    font-style: italic;
-    color: var(--color-light-gray);
-    position: relative;
-    z-index: 1;
-}
-
-/* --- Container Principal --- */
-.container {
-    max-width: 1200px;
-    margin: 40px auto;
-    padding: 0 20px;
-    flex-grow: 1; /* Permite que o container cresça e preencha o espaço */
-}
-
-/* --- Seções Gerais --- */
-section {
-    background-color: var(--color-light-text);
-    border-radius: 15px;
-    padding: 40px;
-    margin-bottom: 40px;
-    box-shadow: 0 8px 20px var(--color-shadow);
-    border: 1px solid #ddd;
-    position: relative;
-    overflow: hidden;
-    animation: fadeIn 1s ease-out;
-    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
-}
-
-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
-}
-
-section::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    width: 80px;
-    height: 80px;
-    background: var(--color-accent-teal);
-    border-radius: 50%;
-    opacity: 0.1;
-    filter: blur(15px);
-    z-index: 0;
-}
-
-section::after {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    right: -20px;
-    width: 60px;
-    height: 60px;
-    background: var(--color-accent-gold);
-    border-radius: 50%;
-    opacity: 0.1;
-    filter: blur(10px);
-    z-index: 0;
-}
-
-
-section h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.8em;
-    color: var(--color-primary-dark);
-    margin-bottom: 25px;
-    text-align: center;
-    border-bottom: 3px solid var(--color-accent-gold);
-    padding-bottom: 15px;
-    position: relative;
-    z-index: 1;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-section h2::after {
-    content: '🎨'; /* Emoji de paleta de cores */
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 0.8em;
-    color: var(--color-highlight-red);
-    opacity: 0.7;
-}
-
-section h3 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.8em;
-    color: var(--color-accent-teal);
-    margin-top: 35px;
-    margin-bottom: 20px;
-    text-align: left;
-    position: relative;
-    padding-left: 20px;
-}
-
-section h3::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: var(--color-accent-gold);
-    font-size: 1.2em;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-section p {
-    font-size: 1.15em;
-    margin-bottom: 20px;
-    color: var(--color-dark-text);
-    text-align: justify;
-}
-
-/* --- Estilo para Exemplos de Arte --- */
-.art-example {
-    display: flex;
-    align-items: flex-start;
-    background-color: #f9f9f9;
-    border: 1px dashed var(--color-accent-gold);
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 25px;
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.art-example:hover {
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transform: translateX(5px);
-    background-color: #fff;
-}
-
-.art-example img {
-    width: 120px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 8px;
-    margin-right: 20px;
-    border: 3px solid var(--color-accent-teal);
-    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
-}
-
-.art-example:hover img {
-    transform: scale(1.05) rotate(2deg);
-}
-
-.art-example div {
-    flex-grow: 1;
-}
-
-.art-example h4 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.5em;
-    color: var(--color-primary-dark);
-    margin-bottom: 8px;
-}
-
-.art-example p {
-    font-size: 1em;
-    color: var(--color-dark-text);
-    margin-bottom: 0;
-}
-
-/* --- Lista de Artistas --- */
-.artist-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 25px;
-    justify-content: center;
-}
-
-.artist-list li {
-    background-color: var(--color-accent-teal);
-    color: var(--color-light-text);
-    padding: 10px 20px;
-    border-radius: 25px;
-    font-weight: 700;
-    font-size: 0.95em;
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-}
-
-.artist-list li:hover {
-    background-color: var(--color-primary-dark);
-    transform: scale(1.05);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-}
-
-.artist-list li::before {
-    content: '✨'; /* Brilho sutil */
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    font-size: 0.8em;
-    opacity: 0.5;
-    transition: transform 0.3s ease;
-}
-
-.artist-list li:hover::before {
-    transform: scale(1.5) rotate(15deg);
-}
-
-/* --- Seção de Reflexão --- */
-.definition-box {
-    background-color: var(--color-accent-gold);
-    color: var(--color-dark-text);
-    padding: 30px;
-    border-radius: 15px;
-    margin: 30px auto;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
-    border: 3px solid var(--color-highlight-red);
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    animation: borderPulse 4s infinite ease-in-out;
-}
-
-.definition-box p {
-    font-family: 'Dancing Script', cursive;
-    font-size: 1.8em;
-    font-weight: bold;
-    margin-bottom: 15px;
-    color: var(--color-primary-dark);
-    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
-}
-
-.definition-box span {
-    display: block;
-    font-size: 1.1em;
-    margin-top: 10px;
-    color: var(--color-dark-text);
-}
-
-.definition-box::before {
-    content: '💡'; /* Lâmpada de ideia */
-    position: absolute;
-    top: 15px;
-    left: 15px;
-    font-size: 2.5em;
-    opacity: 0.6;
-}
-
-.definition-box::after {
-    content: '🤔'; /* Emoji de pensamento */
-    position: absolute;
-    bottom: 15px;
-    right: 15px;
-    font-size: 2.5em;
-    opacity: 0.6;
-}
-
-/* Lista de Elementos Comuns da Arte */
-.section ul {
-    list-style: none;
-    padding-left: 0;
-    margin-top: 20px;
-}
-
-.section ul li {
-    font-size: 1.1em;
-    margin-bottom: 12px;
-    padding-left: 30px;
-    position: relative;
-    color: var(--color-dark-text);
-}
-
-.section ul li strong {
-    color: var(--color-primary-dark);
-    font-weight: 700;
-}
-
-.section ul li::before {
-    content: '✓'; /* Checkmark para lista */
-    position: absolute;
-    left: 0;
-    color: var(--color-accent-teal);
-    font-weight: bold;
-    font-size: 1.2em;
-    line-height: 1;
-}
-
-/* --- Seção Final "Curioso para Mergulhar" --- */
-.section-center {
-    text-align: center;
-    padding: 50px;
-    border: 2px dashed var(--color-highlight-red);
-    background-color: #fff0e0; /* Fundo mais claro para destaque */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    margin-top: 50px;
-    border-radius: 20px;
-    position: relative;
-    overflow: hidden;
-}
-
-.section-center h2 {
-    color: var(--color-highlight-red);
-    border-bottom: none;
-    margin-bottom: 20px;
-    font-size: 2.5em;
-}
-
-.section-center p {
-    max-width: 800px;
-    margin: 0 auto 30px;
-    font-size: 1.2em;
-    line-height: 1.6;
-}
-
-.back-button {
-    display: inline-block;
-    background: linear-gradient(45deg, var(--color-accent-teal), var(--color-primary-dark));
-    color: var(--color-light-text);
-    padding: 15px 30px;
-    border-radius: 30px;
-    font-size: 1.1em;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.back-button:hover {
-    background: linear-gradient(45deg, var(--color-primary-dark), var(--color-accent-teal));
-    transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.back-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    transform: skewX(-20deg);
-    transition: all 0.5s ease;
-    z-index: 0;
-}
-
-.back-button:hover::before {
-    left: 100%;
-}
-
-/* --- Rodapé --- */
-footer {
-    background: var(--color-primary-dark);
-    color: var(--color-light-text);
-    text-align: center;
-    padding: 30px 20px;
-    margin-top: 50px;
-    font-size: 0.9em;
-    box-shadow: 0 -4px 15px var(--color-shadow);
-    position: relative;
-    overflow: hidden;
-}
-
-footer p {
-    margin: 0;
-    position: relative;
-    z-index: 1;
-}
-
-footer::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-        45deg,
-        rgba(255, 255, 255, 0.05),
-        rgba(255, 255, 255, 0.05) 5px,
-        transparent 5px,
-        transparent 10px
-    );
-    opacity: 0.3;
-    z-index: 0;
-}
-
-/* --- Linha horizontal (divisor) --- */
-hr {
-    border: none;
-    border-top: 5px dotted var(--color-accent-gold);
-    margin: 60px auto;
-    width: 50%;
-    opacity: 0.7;
-    animation: fadeIn 1.5s ease-out;
-}
-
-/* --- Responsividade --- */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2.8em;
-    }
-
-    header .subtitle {
-        font-size: 1em;
-    }
-
-    .container {
-        margin: 20px auto;
-        padding: 0 15px;
-    }
-
-    section {
-        padding: 30px;
-        margin-bottom: 30px;
-    }
-
-    section h2 {
-        font-size: 2em;
-    }
-
-    section h3 {
-        font-size: 1.5em;
-    }
-
-    section p {
-        font-size: 1em;
-    }
-
-    .art-example {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .art-example img {
-        margin-right: 0;
-        margin-bottom: 15px;
-    }
-
-    .artist-list {
-        justify-content: center;
-    }
-
-    .definition-box {
-        padding: 20px;
-    }
-
-    .definition-box p {
-        font-size: 1.5em;
-    }
-
-    .section-center h2 {
-        font-size: 2em;
-    }
-
-    .section-center p {
-        font-size: 1em;
-    }
-
-    .back-button {
-        padding: 12px 25px;
-        font-size: 1em;
-    }
-}
-
-@media (max-width: 480px) {
-    header {
-        padding: 60px 10px 40px;
-    }
-    header h1 {
-        font-size: 2em;
-    }
-
-    header .subtitle {
-        font-size: 0.9em;
-    }
-
-    section {
-        padding: 20px;
-        margin-bottom: 20px;
-    }
-
-    section h2 {
-        font-size: 1.8em;
-    }
-
-    section h3 {
-        font-size: 1.3em;
-    }
-
-    .art-example img {
-        width: 100px;
-        height: 100px;
-    }
-
-    .art-example h4 {
-        font-size: 1.3em;
-    }
-
-    .definition-box {
-        padding: 15px;
-    }
-
-    .definition-box p {
-        font-size: 1.2em;
-    }
-    .definition-box span {
-        font-size: 0.9em;
-    }
-
-    .section-center {
-        padding: 30px 15px;
-    }
-    .section-center h2 {
-        font-size: 1.8em;
-    }
-    .back-button {
-        padding: 10px 20px;
-        font-size: 0.9em;
-    }
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desvendando Outras Formas de Arte</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style_outras_expressoes.css">
+</head>
+<body>
+    <header>
+        <h1>Desvendando Outras Formas de Arte</h1>
+        <p class="subtitle">Mergulhe no universo criativo além das telas e esculturas, explorando a diversidade da expressão humana!</p>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>Performance Art: A Arte em Movimento!</h2>
+            <p>A Performance Art é uma forma de arte em que o artista usa seu próprio corpo, voz e ações para criar uma experiência ao vivo. É efêmera, muitas vezes improvisada e busca provocar reflexão ou emoção no público.</p>
+
+            <h3>Exemplos Incríveis:</h3>
+            <div class="art-example">
+                <img src="https://tse3.mm.bing.net/th/id/OIP.7NYrxdJ6XIAkjK2XabqiFwHaNK?rs=1&pid=ImgDetMain&o=7&rm=3 " alt="Marina Abramović">
+                <div>
+                    <h4>Marina Abramović e "A Artista Está Presente"</h4>
+                    <p>Em 2010, no MoMA, Abramović sentou-se em silêncio, permitindo que visitantes se sentassem à sua frente e a encarassem. Uma obra sobre presença, vulnerabilidade e conexão humana.</p>
+                </div>
+            </div>
+            <div class="art-example">
+                <img src=" https://th.bing.com/th/id/R.5f0033fb37a0f609f79eaba9ca2e5f92?rik=klj4kevSG67yFA&riu=http%3a%2f%2fid.feymag.com%2fUpload%2fArticle%2fGalerynews%2fa3936eae-c_How+to+Explain+Pictures+to+a+Dead+Hare.jpg&ehk=l1TLBPHYA7Cq5VwiZyOC1ZhYt4BL6xtjJFri301%2faQY%3d&risl=&pid=ImgRaw&r=0 " alt="Joseph Beuys">
+                <div>
+                    <h4>Joseph Beuys e "Como Explicar Pinturas a uma Lebre Morta"</h4>
+                    <p>Em 1965, Beuys, com o rosto coberto de mel e folhas de ouro, falava para uma lebre morta sobre suas pinturas, explorando temas de comunicação e transformação.</p>
+                </div>
+            </div>
+
+            <h3>Artistas Notáveis:</h3>
+            <ul class="artist-list">
+                <li>Marina Abramović</li>
+                <li>Joseph Beuys</li>
+                <li>Yoko Ono</li>
+                <li>Vito Acconci</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Land Art: Quando a Natureza Vira Tela!</h2>
+            <p>A Land Art, ou Arte da Terra, utiliza o próprio ambiente natural como material e suporte para a criação artística. São obras muitas vezes grandiosas, que interagem com a paisagem e são suscetíveis às mudanças do tempo.</p>
+
+            <h3>Exemplos Incríveis:</h3>
+            <div class="art-example">
+                <img src="https://via.placeholder.com/150/D2F8D2/000000?text=Spiral+Jetty" alt="Spiral Jetty">
+                <div>
+                    <h4>Robert Smithson e "Spiral Jetty"</h4>
+                    <p>Uma espiral gigantesca feita de basalto, lama e cristais de sal no Grande Lago Salgado de Utah, criada em 1970. Uma obra icônica que desafia a permanência e a escala.</p>
+                </div>
+            </div>
+            <div class="art-example">
+                <img src="https://via.placeholder.com/150/FFE0E0/000000?text=Christo+and+Jeanne-Claude" alt="Christo and Jeanne-Claude">
+                <div>
+                    <h4>Christo e Jeanne-Claude e "Wrapped Reichstag"</h4>
+                    <p>Famosos por "embrulhar" edifícios e paisagens, como o Reichstag em Berlim (1995), criando uma nova perspectiva sobre o familiar e efêmero.</p>
+                </div>
+            </div>
+
+            <h3>Artistas Notáveis:</h3>
+            <ul class="artist-list">
+                <li>Robert Smithson</li>
+                <li>Christo e Jeanne-Claude</li>
+                <li>Andy Goldsworthy</li>
+                <li>Walter De Maria</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Arte Digital: O Pincel do Século XXI!</h2>
+            <p>A Arte Digital abrange qualquer obra criada ou apresentada usando tecnologia digital. Desde pinturas digitais e esculturas 3D até arte interativa, realidade virtual e video mapping. É um campo em constante expansão!</p>
+
+            <h3>Exemplos Incríveis:</h3>
+            <div class="art-example">
+                <img src="https://via.placeholder.com/150/E6E6FA/000000?text=Refik+Anadol" alt="Refik Anadol">
+                <div>
+                    <h4>Refik Anadol e suas Instalações de Dados</h4>
+                    <p>Anadol transforma grandes conjuntos de dados em experiências visuais imersivas e dinâmicas, como suas "Machine Hallucinations", que exploram a inteligência artificial na arte.</p>
+                </div>
+            </div>
+            <div class="art-example">
+                <img src="https://via.placeholder.com/150/FFEFD5/000000?text=TeamLab" alt="TeamLab">
+                <div>
+                    <h4>TeamLab e seus Mundos Interativos</h4>
+                    <p>Um coletivo de arte japonês que cria instalações digitais imersivas e interativas, onde o público se torna parte da obra, como no seu "Borderless" em Tóquio.</p>
+                </div>
+            </div>
+
+            <h3>Artistas Notáveis:</h3>
+            <ul class="artist-list">
+                <li>Refik Anadol</li>
+                <li>TeamLab</li>
+                <li>Olafur Eliasson (em parte)</li>
+                <li>Vera Molnár (pioneira)</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Street Art & Grafite: As Ruas Falam!</h2>
+            <p>A Street Art é arte criada em espaços públicos, geralmente fora das galerias e instituições. O grafite é uma de suas formas mais conhecidas, mas inclui também murais, stencils, instalações urbanas e mais. É uma voz para a cidade!</p>
+
+            <h3>Exemplos Incríveis:</h3>
+            <div class="art-example">
+                <img src="https://via.placeholder.com/150/D1F8FF/000000?text=Banksy" alt="Banksy">
+                <div>
+                    <h4>Banksy e suas Mensagens Subversivas</h4>
+                    <p>O misterioso artista britânico usa estênceis para criar obras com forte crítica social e política em paredes ao redor do mundo, tornando-se um ícone da Street Art.</p>
+                </div>
+            </div>
+            <div class="art-example">
+                <img src="https://via.placeholder.com/150/F8D7F8/000000?text=Os+Gemeos" alt="Os Gemeos">
+                <div>
+                    <h4>Os Gêmeos e seus Murais Coloridos</h4>
+                    <p>A dupla de irmãos brasileiros cria murais vibrantes e oníricos, misturando folclore, cultura pop e sonhos, com sua assinatura de personagens amarelos.</p>
+                </div>
+            </div>
+
+            <h3>Artistas Notáveis:</h3>
+            <ul class="artist-list">
+                <li>Banksy</li>
+                <li>Os Gêmeos</li>
+                <li>Shepard Fairey</li>
+                <li>Vhils</li>
+            </ul>
+        </section>
+
+        ---
+
+        <section>
+            <h2>Mas Afinal, O Que Define a Arte? Uma Reflexão Aberta!</h2>
+            <p>Essa é a pergunta de um milhão de dólares! Definir arte é um desafio que filósofos e pensadores enfrentam há séculos. Não há uma resposta única e definitiva, o que é fascinante!</p>
+
+            <div class="definition-box">
+                <p>"A arte é a expressão da alma humana em sua forma mais livre e criativa."</p>
+                <span>Ela pode ser uma manifestação de beleza, emoção, ideia, protesto, provocação ou contemplação.</span>
+                <span>O que um dia foi visto como "não arte", pode ser abraçado como arte no futuro.</span>
+            </div>
+
+            <h3>Elementos Comuns, Mas Não Obrigatórios:</h3>
+            <ul>
+                <li>
+                    <strong>Intenção:</strong> Geralmente, há uma intenção do criador em produzir algo que seja percebido como arte.
+                </li>
+                <li>
+                    <strong>Comunicação:</strong> A arte busca comunicar algo – uma emoção, uma ideia, uma crítica.
+                </li>
+                <li>
+                    <strong>Habilidade e Técnica:</strong> Embora a arte conceitual desafie isso, muitas formas de arte envolvem um domínio técnico.
+                </li>
+                <li>
+                    <strong>Reação e Interpretação:</strong> A arte ganha vida na interação com o público, que a interpreta e ressignifica.
+                </li>
+                <li>
+                    <strong>Contexto Cultural e Histórico:</strong> A percepção do que é arte muda ao longo do tempo e entre diferentes culturas.
+                </li>
+            </ul>
+            <p>No fim das contas, a arte é um espelho da sociedade, uma janela para a alma individual e coletiva, e uma conversa em constante evolução. **Ela é o que nos faz sentir, pensar e questionar!**</p>
+        </section>
+
+        <section class="section-center">
+            <h2>Curioso(a) para Mergulhar Ainda Mais?</h2>
+            <p>A arte é um oceano de possibilidades! Explore, questione, sinta. A melhor forma de entender a arte é experimentá-la. Visite exposições, assista a performances, ouça músicas, veja filmes, dance! A arte está em todo lugar, esperando para ser descoberta por você.</p>
+            <p>Qual dessas formas de arte te encantou mais? Compartilhe sua paixão!</p>
+            <a href="sua_pagina_principal.html" class="back-button">↩️ Voltar para a Página Principal</a>
+        </section>
+    </div>
+
+    <footer>
+        <p>✨ Criado com inspiração e paixão pela arte por [Seu Nome/Nome do Site] &copy; 2025</p>
+    </footer>
+</body>
+</html>
