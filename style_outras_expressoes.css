@@ -18,8 +18,8 @@ html {
     --color-text-dark: #2c3e50; /* Texto principal escuro */
     --color-text-light: #ffffff; /* Texto claro */
     --color-border-subtle: #d0d7e0; /* Borda suave */
-    --color-button-main: #f58220; /* Laranja vibrante para botões */
-    --color-button-hover: #e06c1c; /* Laranja mais escuro no hover */
+    --color-button-main: #ee8cee; /* Laranja vibrante para botões */
+    --color-button-hover: #958fe7; /* Laranja mais escuro no hover */
 
     /* Fontes */
     --font-body: 'Montserrat', sans-serif;
