@@ -1066,3 +1066,230 @@ footer {
     .challenge-item p { font-size: 0.9em; }
     .challenge-call-to-action { max-width: 100%; }
 }
+
+
+
+
+/* --- Seção de Perguntas Frequentes (FAQ) --- */
+.faq-section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 30px auto;
+    background-color: #fce8ff; /* Um tom um pouco diferente para destacar, como a seção de vídeos */
+    border-radius: 12px; /* Mais arredondado */
+    box-shadow: 0 5px 20px rgba(60, 0, 70, 0.18); /* Sombra suave e evidente */
+    text-align: center;
+    border: 3px solid #d095dd; /* Borda sutil */
+    position: relative; /* Para os pseudo-elementos de canto */
+}
+
+/* Pseudo-elementos de canto para a seção de FAQ, como outras sections */
+.faq-section::before,
+.faq-section::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border: 3px solid var(--color-highlight); /* Usa sua cor de highlight */
+    border-radius: 5px;
+    opacity: 0.3;
+}
+
+.faq-section::before {
+    top: 20px;
+    left: 20px;
+    border-bottom: none;
+    border-right: none;
+}
+
+.faq-section::after {
+    bottom: 20px;
+    right: 20px;
+    border-top: none;
+    border-left: none;
+}
+
+.faq-section h2 {
+    font-family: var(--font-fancy);
+    font-size: 3.5em;
+    color: var(--color-accent); /* Sua cor de destaque */
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 15px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.faq-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%) rotate(-2deg); /* Mantém o efeito de rotação do seu h2::after */
+    width: 100px;
+    height: 5px;
+    background: var(--gradient-art-secondary); /* Usa seu gradiente de brushstroke */
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.faq-section .section-description {
+    font-family: var(--font-text);
+    font-size: 1.2em;
+    color: var(--color-text-dark); /* Sua cor de texto principal */
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+    line-height: 1.6;
+}
+
+.faq-accordion {
+    max-width: 900px; /* Limita a largura do acordeão */
+    margin: 0 auto;
+    display: flex; /* Permite o flexbox para controle de espaçamento */
+    flex-direction: column; /* Itens um abaixo do outro */
+    gap: 15px; /* Espaço entre os itens do acordeão */
+}
+
+.faq-item {
+    background-color: #ffffff; /* Fundo branco para os itens */
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(90, 0, 100, 0.1); /* Sombra como video-item */
+    transition: box-shadow 0.3s ease;
+    text-align: left; /* Alinha o texto dentro do item à esquerda */
+    overflow: hidden; /* Para o content não vazar */
+    position: relative;
+}
+
+.faq-item:hover {
+    box-shadow: 0 8px 25px rgba(90, 0, 100, 0.2); /* Sombra mais intensa no hover */
+}
+
+/* Pseudo-elemento decorativo para cada item do FAQ (inspirado nos outros splatters) */
+.faq-item::after {
+    content: '✨'; /* Um ícone sutil, talvez um asterisco ou brilho */
+    font-size: 2em;
+    color: var(--color-primary-light);
+    position: absolute;
+    top: 10px; /* Canto superior direito */
+    right: 15px;
+    opacity: 0.5;
+    transform: rotate(15deg);
+    filter: drop-shadow(0 0 5px rgba(181, 96, 224, 0.6));
+    transition: transform 0.3s ease;
+}
+
+.faq-item:hover::after {
+    transform: rotate(0deg) scale(1.1); /* Animação no hover */
+    opacity: 0.8;
+}
+
+.accordion-header {
+    background-color: #d49df6; /* Cor de fundo do cabeçalho, como o tip-item */
+    color: var(--color-text-light); /* Texto mais claro para contraste */
+    font-family: var(--font-heading);
+    font-size: 1.5em;
+    padding: 20px 25px;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex; /* Para alinhar o texto e o ícone de seta */
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px 10px 0 0; /* Arredonda só a parte de cima */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Sombra leve no texto */
+}
+
+.accordion-header:hover {
+    background-color: var(--color-primary); /* Fica mais escuro no hover */
+    color: #fff;
+}
+
+/* Seta de indicador do acordeão */
+.accordion-header::after {
+    content: '▼'; /* Seta para baixo */
+    font-size: 0.7em;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Estado "ativo" da seta quando o acordeão está aberto */
+.accordion-header.active::after {
+    transform: rotate(180deg); /* Seta para cima quando ativo */
+}
+
+.accordion-content {
+    background-color: #ffffff; /* Fundo branco para o conteúdo */
+    padding: 0 25px; /* Padding horizontal */
+    max-height: 0; /* Começa fechado */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out; /* Transição suave */
+    border-radius: 0 0 10px 10px; /* Arredonda só a parte de baixo */
+}
+
+.accordion-content.open {
+    max-height: 200px; /* Um valor alto o suficiente para caber o conteúdo */
+    padding: 20px 25px; /* Padding vertical quando aberto */
+}
+
+.accordion-content p {
+    font-family: var(--font-text);
+    font-size: 1em;
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    margin: 0; /* Remove margens padrão do p dentro do acordeão */
+}
+
+/* --- CTA de Contato no FAQ --- */
+.faq-contact-cta {
+    background: linear-gradient(to right, #b171f5, #e7b8f8); /* Gradiente do seu header */
+    color: var(--color-text-light);
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin: 60px auto 0 auto;
+    max-width: 700px;
+    text-align: center;
+}
+
+.faq-contact-cta h3 {
+    font-family: var(--font-fancy);
+    font-size: 2.2em;
+    color: var(--color-text-light);
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.faq-contact-cta p {
+    font-family: var(--font-text);
+    font-size: 1.1em;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 30px;
+}
+
+/* Responsividade */
+@media (max-width: 992px) {
+    .faq-section h2 { font-size: 3em; }
+    .faq-section .section-description { font-size: 1.1em; }
+    .faq-accordion { max-width: 700px; }
+    .accordion-header { font-size: 1.3em; padding: 18px 20px; }
+    .accordion-content p { font-size: 0.95em; }
+    .faq-contact-cta h3 { font-size: 1.8em; }
+    .faq-contact-cta p { font-size: 1em; }
+}
+
+@media (max-width: 768px) {
+    .faq-section { padding: 40px 15px; }
+    .faq-section h2 { font-size: 2.5em; }
+    .faq-section h2::after { width: 80px; height: 4px; }
+    .faq-section .section-description { margin-bottom: 30px; }
+    .faq-accordion { gap: 10px; }
+    .accordion-header { font-size: 1.2em; padding: 15px 18px; }
+    .accordion-content.open { padding: 15px 18px; } /* Ajuste de padding ao abrir */
+    .faq-contact-cta { padding: 30px 20px; margin: 40px auto; }
+    .faq-contact-cta h3 { font-size: 1.6em; }
+}
