@@ -66,14 +66,14 @@ header div::before { /* Criando um elemento aninhado no header para este efeito 
 :root {
     /* Cores (Paleta otimizada para tema de arte com brilho) */
     --color-bg-light: #fefefe; /* Fundo principal muito claro */
-    --color-bg-dark: #f3d1e5; /* Fundo secundário sutilmente azulado */
+    --color-bg-dark: #f8b7dd; /* Fundo secundário sutilmente azulado */
     --color-primary: #fc68b2; /* Roxo principal, forte e artístico */
     --color-secondary: #77b7e2; /* Azul vibrante, complementa o roxo */
     --color-accent: #fd859f; /* Coral/Vermelho para destaque e energia */
     --color-highlight: #c761e6; /* Amarelo ouro para brilho e atenção */
     --color-text-dark: #2c3e50; /* Texto principal escuro */
     --color-text-light: #ffffff; /* Texto claro */
-    --color-border-subtle: #d0d7e0; /* Borda suave */
+    --color-border-subtle: #c2cedf; /* Borda suave */
     --color-button-main: #ee8cee; /* Laranja vibrante para botões */
     --color-button-hover: #958fe7; /* Laranja mais escuro no hover */
 
