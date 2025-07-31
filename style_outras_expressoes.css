@@ -7,6 +7,62 @@ html {
     box-sizing: inherit;
 }
 
+
+
+/* Elementos decorativos de "tinta" ou "brilho" no header */
+header::before,
+header::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%; /* Formas circulares */
+    filter: blur(45px); /* Efeito de brilho e suavidade, aumentado */
+    pointer-events: none; /* Não interfere com cliques */
+    z-index: 0; /* Fica atrás do conteúdo */
+}
+
+header::before { /* Mancha de cor superior esquerda */
+    width: 250px; /* Um pouco maior */
+    height: 250px; /* Um pouco maior */
+    background: radial-gradient(circle, var(--color-highlight) 0%, transparent 75%); /* Aumenta a transparência para mais difusão */
+    top: -100px; /* Mais para cima */
+    left: -100px; /* Mais para a esquerda */
+    animation: pulseDot 5s infinite alternate ease-in-out, rotateDot 15s infinite linear; /* Pulsa e gira */
+}
+
+header::after { /* Mancha de cor inferior direita */
+    width: 220px; /* Um pouco maior */
+    height: 220px; /* Um pouco maior */
+    background: radial-gradient(circle, var(--color-accent) 0%, transparent 75%); /* Aumenta a transparência */
+    bottom: -90px; /* Mais para baixo */
+    right: -90px; /* Mais para a direita */
+    animation: pulseDot 4.5s infinite alternate ease-in-out 0.5s, rotateDot 12s infinite reverse linear; /* Pulsa com delay e gira ao contrário */
+}
+
+/* Pseudo-elemento para um efeito de névoa ou brilho na base do header */
+header div::before { /* Criando um elemento aninhado no header para este efeito */
+    content: '';
+    position: absolute;
+    bottom: -120px; /* Começa um pouco para fora da tela */
+    left: 0;
+    width: 100%;
+    height: 200px; /* Mais alto para cobrir melhor */
+    background: linear-gradient(to top, rgba(255, 255, 255, 0.2), transparent); /* Gradiente de branco translúcido */
+    filter: blur(60px); /* Mais blur */
+    animation: fadeInScale 2s ease-out 0.5s forwards; /* Animação de entrada */
+    opacity: 0;
+    z-index: 1; /* Acima das manchas de cor, mas abaixo do texto */
+}
+
+
+
+
+
+
+
+
+
+
+
 :root {
     /* Cores (Paleta otimizada para tema de arte com brilho) */
     --color-bg-light: #fefefe; /* Fundo principal muito claro */
