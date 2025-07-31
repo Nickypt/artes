@@ -834,3 +834,235 @@ footer {
     transform: translateY(-3px); /* Leve levantamento ao passar o mouse */
     box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3); /* Sombra mais intensa */
 }
+
+
+
+
+
+
+
+
+
+
+/* --- Seção de Desafios Artísticos --- */
+.challenges-section {
+    padding: 80px 40px;
+    background: linear-gradient(180deg, var(--color-bg-light) 0%, #f0f8ff 100%); /* Gradiente suave de fundo */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-top: 5px solid var(--color-highlight); /* Borda superior destacada */
+    border-bottom: 5px solid var(--color-primary); /* Borda inferior primária */
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05); /* Sombra interna sutil */
+}
+
+.challenges-section h2 {
+    font-family: var(--font-fancy);
+    font-size: 3.8em; /* Título maior e com impacto */
+    color: var(--color-accent); /* Cor de destaque para o título */
+    margin-bottom: 25px;
+    position: relative;
+    display: inline-block; /* Para o pseudo-elemento */
+    padding-bottom: 15px; /* Espaço para a linha */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15); /* Sombra mais forte no texto */
+}
+
+.challenges-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 120px; /* Largura da linha */
+    height: 6px;
+    background: var(--gradient-art-secondary); /* Gradiente na linha inferior */
+    border-radius: 3px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra na linha */
+}
+
+.challenges-section .section-description {
+    font-family: var(--font-text);
+    font-size: 1.4em;
+    color: var(--color-text-dark);
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); /* Sombra suave para legibilidade */
+}
+
+.challenges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px; /* Espaçamento maior entre os itens */
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+}
+
+.challenge-item {
+    background: linear-gradient(150deg, #fefefe, #f0f0f0); /* Fundo com gradiente sutil */
+    border: 3px solid var(--color-border-subtle); /* Borda sutil */
+    border-radius: 15px; /* Bordas mais arredondadas */
+    padding: 30px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Sombra mais pronunciada */
+    transition: transform 0.4s ease-out, box-shadow 0.4s ease-out, background 0.4s ease-out;
+    position: relative;
+    overflow: hidden;
+    text-align: left; /* Alinhamento do texto à esquerda */
+}
+
+.challenge-item:hover {
+    transform: translateY(-12px) rotateZ(1deg) scale(1.02); /* Elevação, leve rotação e escala no hover */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3); /* Sombra mais intensa */
+    background: linear-gradient(150deg, var(--color-primary-light), var(--color-highlight-light)); /* Fundo com gradiente no hover */
+    border-color: var(--color-primary); /* Borda primária no hover */
+}
+
+.challenge-item h3 {
+    font-family: var(--font-heading);
+    font-size: 2.2em; /* Títulos de item maiores */
+    color: var(--color-primary); /* Cor primária para o título do item */
+    margin-bottom: 15px;
+    display: flex; /* Para alinhar ícone e texto */
+    align-items: center;
+    gap: 10px; /* Espaço entre ícone e texto */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Sombra leve no título */
+}
+
+.challenge-item h3::before { /* Ícones dos desafios */
+    font-size: 1.2em;
+    line-height: 1;
+    filter: drop-shadow(0 0 5px var(--color-accent)); /* Brilho no ícone */
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.challenge-item:hover h3::before {
+    transform: rotate(15deg) scale(1.1); /* Animação no ícone ao passar o mouse */
+}
+
+.challenge-item p {
+    font-family: var(--font-text);
+    font-size: 1.15em;
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.challenge-item .challenge-tip {
+    font-size: 0.95em;
+    font-style: italic;
+    color: var(--color-secondary); /* Cor secundária para a dica */
+    border-left: 4px solid var(--color-accent); /* Borda lateral para destaque da dica */
+    padding-left: 10px;
+    margin-top: 15px;
+}
+
+.challenge-item::after { /* Detalhe de "pincelada" ou "mancha" no canto */
+    content: '';
+    position: absolute;
+    bottom: -30px;
+    right: -30px;
+    width: 80px;
+    height: 80px;
+    background: radial-gradient(circle, var(--color-highlight) 0%, transparent 70%);
+    border-radius: 50%;
+    filter: blur(25px);
+    opacity: 0.15;
+    z-index: 0;
+    transition: all 0.5s ease;
+}
+
+.challenge-item:hover::after {
+    opacity: 0.3;
+    width: 100px;
+    height: 100px;
+    bottom: -40px;
+    right: -40px;
+}
+
+.challenge-call-to-action {
+    margin-top: 50px;
+    padding: 30px 20px;
+    background: var(--gradient-art-primary); /* Fundo com gradiente no CTA */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    display: inline-block; /* Ajusta o tamanho ao conteúdo */
+    max-width: 600px; /* Limita a largura */
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.challenge-call-to-action p {
+    font-family: var(--font-text);
+    font-size: 1.4em;
+    color: var(--color-text-light); /* Cor do texto clara */
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4); /* Sombra para legibilidade */
+}
+
+.challenge-call-to-action .hashtag {
+    font-weight: bold;
+    color: var(--color-highlight); /* Cor de destaque para a hashtag */
+    font-size: 1.1em;
+    filter: var(--filter-glow-sm); /* Brilho na hashtag */
+}
+
+.instagram-btn {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); /* Cores do Instagram */
+    border: none;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 30px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: inline-flex; /* Para alinhar ícone */
+    align-items: center;
+    gap: 10px;
+}
+
+.instagram-btn:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    filter: brightness(1.1); /* Leve brilho no hover */
+}
+
+
+/* Media Queries para responsividade (ajustar os tamanhos das fontes e espaçamentos) */
+@media (max-width: 992px) {
+    .challenges-section h2 { font-size: 3em; }
+    .challenges-section .section-description { font-size: 1.2em; }
+    .challenge-item h3 { font-size: 1.8em; }
+    .challenge-item p { font-size: 1em; }
+    .challenge-call-to-action p { font-size: 1.2em; }
+}
+
+@media (max-width: 768px) {
+    .challenges-section { padding: 60px 20px; }
+    .challenges-section h2 { font-size: 2.5em; }
+    .challenges-section h2::after { width: 90px; height: 5px; }
+    .challenges-section .section-description { font-size: 1.1em; margin-bottom: 40px; }
+    .challenges-grid { gap: 25px; }
+    .challenge-item { padding: 25px; }
+    .challenge-item h3 { font-size: 1.6em; }
+    .challenge-item p { font-size: 0.95em; }
+    .challenge-call-to-action { padding: 25px 15px; }
+    .challenge-call-to-action p { font-size: 1.1em; }
+    .instagram-btn { padding: 12px 25px; font-size: 1em; }
+}
+
+@media (max-width: 480px) {
+    .challenges-section { padding: 40px 15px; }
+    .challenges-section h2 { font-size: 2em; }
+    .challenges-section h2::after { width: 70px; height: 4px; }
+    .challenges-section .section-description { font-size: 1em; margin-bottom: 30px; }
+    .challenges-grid { grid-template-columns: 1fr; gap: 20px; } /* Coluna única em telas muito pequenas */
+    .challenge-item { padding: 20px; }
+    .challenge-item h3 { font-size: 1.4em; }
+    .challenge-item p { font-size: 0.9em; }
+    .challenge-call-to-action { max-width: 100%; }
+}
