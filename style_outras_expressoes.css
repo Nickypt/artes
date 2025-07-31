@@ -10,11 +10,11 @@ html {
 :root {
     /* Cores (Paleta otimizada para tema de arte com brilho) */
     --color-bg-light: #fefefe; /* Fundo principal muito claro */
-    --color-bg-dark: #e8f0f7; /* Fundo secundário sutilmente azulado */
-    --color-primary: #7b2cbf; /* Roxo principal, forte e artístico */
-    --color-secondary: #3498db; /* Azul vibrante, complementa o roxo */
-    --color-accent: #ff6f61; /* Coral/Vermelho para destaque e energia */
-    --color-highlight: #ffcd00; /* Amarelo ouro para brilho e atenção */
+    --color-bg-dark: #f3d1e5; /* Fundo secundário sutilmente azulado */
+    --color-primary: #fc68b2; /* Roxo principal, forte e artístico */
+    --color-secondary: #77b7e2; /* Azul vibrante, complementa o roxo */
+    --color-accent: #fd859f; /* Coral/Vermelho para destaque e energia */
+    --color-highlight: #a0e2ee; /* Amarelo ouro para brilho e atenção */
     --color-text-dark: #2c3e50; /* Texto principal escuro */
     --color-text-light: #ffffff; /* Texto claro */
     --color-border-subtle: #d0d7e0; /* Borda suave */
